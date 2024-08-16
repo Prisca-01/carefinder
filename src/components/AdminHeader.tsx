@@ -65,7 +65,11 @@ const AdminHeader: React.FC = () => {
     <>
       <header className="bg-gray-100 p-4 text-black fixed w-full z-50">
         <div className="container mx-auto flex justify-between items-center h-16">
-          <h1 className="text-3xl font-bold text-blue-600 ml-6">Carefinder</h1>
+          <h1 className="text-3xl font-bold text-blue-600 ml-6">
+            <Link href="/dashboard" className="mr-4">
+              Carefinder
+            </Link>
+          </h1>
           <nav className="hidden md:flex space-x-8 mr-12 ">
             <Link href="/dashboard" className="text-black text-l">
               Home
@@ -136,28 +140,28 @@ const AdminHeader: React.FC = () => {
           <div className="md:hidden">
             <FaBars className="cursor-pointer" onClick={toggleMenu} />
             {isMenuOpen && (
-              <div className="fixed inset-0 bg-white flex flex-col items-center justify-center z-50">
+              <div className="fixed inset-0 bg-white flex flex-col items-start justify-center z-50 px-8">
                 <FaTimes
                   className="absolute top-4 right-4 cursor-pointer"
                   onClick={toggleMenu}
                 />
                 <Link
                   href="/dashboard"
-                  className="text-xl mb-4"
+                  className="text-xl mb-4 hover:text-blue-500"
                   onClick={toggleMenu}
                 >
                   Home
                 </Link>
                 <Link
                   href="/blog"
-                  className="text-xl mb-4"
+                  className="text-xl mb-4 hover:text-blue-500"
                   onClick={toggleMenu}
                 >
                   Blog
                 </Link>
                 <Link
                   href="/hospitalentry"
-                  className="text-xl mb-4"
+                  className="text-xl mb-4 hover:text-blue-500"
                   onClick={toggleMenu}
                 >
                   Add Entry
@@ -166,18 +170,21 @@ const AdminHeader: React.FC = () => {
                   <>
                     <button
                       onClick={openProfilePopup}
-                      className=" text-xl mb-4"
+                      className="text-xl mb-4 hover:text-blue-500"
                     >
                       View Profile
                     </button>
                     <Link
                       href="/hospitalentry"
-                      className="text-xl mb-4"
+                      className="text-xl mb-4 hover:text-blue-500"
                       onClick={toggleMenu}
                     >
                       My Entries
                     </Link>
-                    <button onClick={handleLogout} className="text-xl mb-4">
+                    <button
+                      onClick={handleLogout}
+                      className="text-xl mb-4 hover:text-blue-500"
+                    >
                       Log Out
                     </button>
                   </>
@@ -185,6 +192,7 @@ const AdminHeader: React.FC = () => {
               </div>
             )}
           </div>
+
           <AdminProfilePopup
             isOpen={isProfilePopupOpen}
             onClose={closeProfilePopup}

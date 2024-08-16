@@ -13,7 +13,11 @@ export default function Header() {
   return (
     <header className="fixed z-50 w-full bg-blue-600 p-4 text-white">
       <div className="container flex justify-between items-center">
-        <h1 className="text-xl font-bold md:ml-32">Carefinder</h1>
+        <h1 className="text-xl font-bold md:ml-32">
+          <Link href="/" className="mr-4">
+            Carefinder
+          </Link>
+        </h1>
         {/* Mobile Menu Button */}
         <button className="md:hidden text-2xl" onClick={toggleNav}>
           {isNavOpen ? <FaTimes /> : <FaBars />}
@@ -42,7 +46,7 @@ export default function Header() {
         <div
           className={`fixed top-0 right-0 h-full bg-blue-700 text-white w-full md:hidden transition-transform duration-300 ${isNavOpen ? 'translate-x-0' : 'translate-x-full'}`}
         >
-          <nav className="flex flex-col items-center pt-16">
+          <nav className="flex flex-col items-start pt-16 pl-4">
             <button
               className="absolute top-4 right-4 text-2xl"
               onClick={toggleNav}
@@ -51,25 +55,25 @@ export default function Header() {
             </button>
             <Link
               href="/"
-              className="block py-2 px-4 hover:bg-blue-600 rounded"
+              className="block py-2 px-4 hover:bg-blue-600 rounded border-b border-gray-300 w-full"
             >
               Home
             </Link>
             <Link
               href="/blog"
-              className="block py-2 px-4 hover:bg-blue-600 rounded"
+              className="block py-2 px-4 hover:bg-blue-600 rounded border-b border-gray-300 w-full"
             >
               Blog
             </Link>
             <Link
               href="/help"
-              className="block py-2 px-4 hover:bg-blue-600 rounded"
+              className="block py-2 px-4 hover:bg-blue-600 rounded border-b border-gray-300 w-full"
             >
               Help
             </Link>
             <Link
               href="/login"
-              className="block py-2 px-4 hover:bg-blue-600 rounded"
+              className="block py-2 px-4 hover:bg-blue-600 rounded border-b border-gray-300 w-full"
             >
               Log in
             </Link>

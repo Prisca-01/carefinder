@@ -53,7 +53,7 @@ const LandingPage: React.FC = () => {
         </div>
 
         {/* What is Carefinder Section */}
-        <section className="py-16 bg-gray-100 h-[500px]">
+        <section className="py-16 bg-gray-100 h-[600px] md:h-[500px]">
           <div className="max-w-6xl mx-auto px-4 text-center">
             <h2 className="text-4xl font-bold mb-14">What is Carefinder?</h2>
             <p className="text-gray-700 mb-4 text-xl">
@@ -62,7 +62,7 @@ const LandingPage: React.FC = () => {
               reviews, and easy booking options to help you choose the best
               healthcare services.
             </p>
-            <p className="text-gray-700 text-xl">
+            <p className="text-gray-700  text-xl mb-20">
               Admin users can manage facility entries, utilizing markdown
               support to format content, add links, and insert images, ensuring
               that the information is clear and detailed for all users.
