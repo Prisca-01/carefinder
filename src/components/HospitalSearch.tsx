@@ -44,8 +44,17 @@ const states = [
 
 const cities: { [key: string]: string[] } = {
   Abia: ['Umuahia', 'Aba', 'Arochukwu'],
-  Anambra: ['Awka', 'Onitsha', 'Nnewi', 'Nimo', 'Nkpor', 'Obosi', 'Ihiala', 'Adazi Nnukwu'],
-  AkwaIbom: ['Uyo','Eket', 'Ikot Ekpene' ],
+  Anambra: [
+    'Awka',
+    'Onitsha',
+    'Nnewi',
+    'Nimo',
+    'Nkpor',
+    'Obosi',
+    'Ihiala',
+    'Adazi Nnukwu',
+  ],
+  AkwaIbom: ['Uyo', 'Eket', 'Ikot Ekpene'],
   Adamawa: ['Yola', 'Jimeta', 'Numan', 'Mubi', 'Hong'],
   Bauchi: ['Bauchi', 'Azare', 'Misau', 'Katagum'],
   Bayelsa: ['Yenagoa', 'Ogbia', 'Brass', 'Sagbama'],
@@ -55,23 +64,97 @@ const cities: { [key: string]: string[] } = {
   Delta: ['Warri', 'Asaba', 'Sapele', 'Agbor', 'Ughelli', 'Oghara'],
   Ebonyi: ['Abakaliki', 'Izzi', 'Ohaozara', 'Ezza'],
   Edo: ['Iyamho', 'Ekpoma', 'Benin City', 'Uromi', 'Auchi'],
-  Enugu: ['Enugu', 'Nsukka', 'Ituku-Ozalla', 'Trans-Ekulu', ],
+  Enugu: ['Enugu', 'Nsukka', 'Ituku-Ozalla', 'Trans-Ekulu'],
   Ekiti: ['Ado-Ekiti', 'Ikere-Ekiti', 'Ikole-Ekiti', 'Ido-Ekiti', 'Oye-Ekiti'],
   Gombe: ['Gombe', 'Kaltungo', 'Billiri', 'Bajoga'],
   Imo: ['Owerri', 'Orlu', 'Okigwe'],
   Jigawa: ['Dutse', 'Hadejia', 'Birnin Kudu', 'Gumel'],
-  Kaduna: ['Kaduna', 'Zaria', 'Kafanchan', 'Giwa', 'Saminaka', 'Birnin Gwari', 'Zonkwa'],
+  Kaduna: [
+    'Kaduna',
+    'Zaria',
+    'Kafanchan',
+    'Giwa',
+    'Saminaka',
+    'Birnin Gwari',
+    'Zonkwa',
+  ],
   Kano: ['Kano', 'Wudil', 'Bichi', 'Gaya', 'Tiga', 'Rano', 'Kunchi'],
-  Katsina: ['Katsina', 'Daura', 'Funtua', 'Malumfashi', 'Dutsin-Ma', 'Kankai', 'Jibia', 'Mani', 'Bakori'],
-  Kebbi: ['Birnin Kebbi', 'Koko', 'Yauri', 'Argungu', 'Zuru', 'Jega', 'Bunza', 'Danko Wasagu', 'Aliero'],
-  Kogi: ['Lokoja', 'Okene', 'Idah', 'Kabba', 'Ankpa', 'Ajaokuta', 'Dekina', 'Bassa', 'Isanlu'],
-  Kwara: ['Ilorin', 'Offa', 'Omu-Aran', 'Ajase-Ipo','Lafiagi', 'Patigi', 'Kaima', 'Share'],
-  Lagos: ['Lagos Island','Ikeja', 'Surulere', 'Lagos', 'Apapa', 'Lekki', 'Victoria Island', 'Ajah'],
+  Katsina: [
+    'Katsina',
+    'Daura',
+    'Funtua',
+    'Malumfashi',
+    'Dutsin-Ma',
+    'Kankai',
+    'Jibia',
+    'Mani',
+    'Bakori',
+  ],
+  Kebbi: [
+    'Birnin Kebbi',
+    'Koko',
+    'Yauri',
+    'Argungu',
+    'Zuru',
+    'Jega',
+    'Bunza',
+    'Danko Wasagu',
+    'Aliero',
+  ],
+  Kogi: [
+    'Lokoja',
+    'Okene',
+    'Idah',
+    'Kabba',
+    'Ankpa',
+    'Ajaokuta',
+    'Dekina',
+    'Bassa',
+    'Isanlu',
+  ],
+  Kwara: [
+    'Ilorin',
+    'Offa',
+    'Omu-Aran',
+    'Ajase-Ipo',
+    'Lafiagi',
+    'Patigi',
+    'Kaima',
+    'Share',
+  ],
+  Lagos: [
+    'Lagos Island',
+    'Ikeja',
+    'Surulere',
+    'Lagos',
+    'Apapa',
+    'Lekki',
+    'Victoria Island',
+    'Ajah',
+  ],
   Nasarawa: ['Lafia', 'Keffi', 'Akwanga', 'Doma', 'Karu'],
   Niger: ['Minna', 'Bida', 'Suleja', 'Kontagora', 'Lapai'],
   Oyo: ['Ibadan', 'Ogbomosho'],
-  Ogun: ['Abeokuta', 'Ilishan-Remo', 'Ijebu-Ode', 'Ijebu-Igbo', 'Sagamu', 'Ilaro', 'Ota'],
-  Ondo: ['Akure', 'Ondo City', 'Owo', 'Ile-Oluji', 'Ikare-Akoko', 'Okitipupa', 'Irele','Igbokoda', 'Idanre'],
+  Ogun: [
+    'Abeokuta',
+    'Ilishan-Remo',
+    'Ijebu-Ode',
+    'Ijebu-Igbo',
+    'Sagamu',
+    'Ilaro',
+    'Ota',
+  ],
+  Ondo: [
+    'Akure',
+    'Ondo City',
+    'Owo',
+    'Ile-Oluji',
+    'Ikare-Akoko',
+    'Okitipupa',
+    'Irele',
+    'Igbokoda',
+    'Idanre',
+  ],
   Osun: ['Osogbo', 'Ilesa', 'Ile-Ife', 'Iwo', 'Ikirun', 'Ede', 'Ipetu-Ijesha'],
   Plateau: ['Jos', 'Bukuru', 'Bassa', 'Barkin Ladi', 'Pankshin', 'Shendam'],
   Rivers: ['Port Harcourt', 'Obio-Akpor', 'Okrika', 'Eleme', 'Ikwerre'],
@@ -80,7 +163,7 @@ const cities: { [key: string]: string[] } = {
   Yobe: ['Damaturu', 'Nguru', 'Potiskum', 'Gashua', 'Buni Yadi'],
   Zamfara: ['Gusau', 'Talata Mafara', 'Anka', 'Tsafe', 'Shinkafi'],
   FCT: ['Abuja'],
-}
+};
 
 const HospitalSearch: React.FC = () => {
   const [state, setState] = useState<string>('');
@@ -99,7 +182,7 @@ const HospitalSearch: React.FC = () => {
     e.preventDefault();
     if (state && city) {
       router.push(
-        `/search?state=${encodeURIComponent(state)}&city=${encodeURIComponent(city)}`
+        `/search?state=${encodeURIComponent(state)}&city=${encodeURIComponent(city)}`,
       );
     }
   };
@@ -116,7 +199,9 @@ const HospitalSearch: React.FC = () => {
             onChange={handleStateChange}
             className="p-2 text-gray-600 border border-gray-300 rounded-full outline-none focus:outline-blue-600 w-72 h-14"
           >
-            <option value="Select state" defaultChecked >Select a state...</option>
+            <option value="Select state" defaultChecked>
+              Select a state...
+            </option>
             {states.map((state) => (
               <option key={state} value={state}>
                 {state}
@@ -130,7 +215,9 @@ const HospitalSearch: React.FC = () => {
             className="p-2 text-gray-600 border border-gray-300 rounded-full outline-none focus:outline-blue-600 w-72 h-14"
             disabled={!state}
           >
-            <option value="Select city" defaultChecked>Select a city...</option>
+            <option value="Select city" defaultChecked>
+              Select a city...
+            </option>
             {selectedCities.map((city) => (
               <option key={city} value={city}>
                 {city}

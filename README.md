@@ -3,12 +3,11 @@
 Carefinder is a [Next.js](https://nextjs.org/) hospital search platform bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 It allows users to search for hospitals across Nigerian states, providing detailed information such as contact details, services, and more.
 
-
 ## Getting Started
 
 First, install the project dependencies:
 
-```bash
+````bash
 npm install
 # or
 yarn install
@@ -25,7 +24,7 @@ yarn dev
 pnpm dev
 # or
 bun dev
-```
+````
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
@@ -34,6 +33,7 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
 ## Features
+
 -Search Hospitals: Easily find hospitals by selecting a state and city.
 -Detailed Hospital Information: View hospital details including address, phone number, and email.
 -User-Friendly Interface: A clean and responsive design ensures a smooth user experience.

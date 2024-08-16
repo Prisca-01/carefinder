@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "types": ["vitest/globals"],
     "module": "commonjs",
     "noImplicitReturns": true,
     "noUnusedLocals": true,
@@ -15,8 +16,7 @@
     "strict": true,
     "target": "es2017"
   },
+  "extends": "../tsconfig.json",
   "compileOnSave": true,
-  "include": [
-    "src", "mailgun-js.d.ts"
-  ]
+  "include": ["src", "mailgun-js.d.ts", "**/*.ts", "**/*.tsx", "./.eslintrc.js"]
 }

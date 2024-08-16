@@ -94,7 +94,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
   //     setLoading(false);
   //   }
   // };
-  
 
   const loginWithGithub = async () => {
     setLoading(true);

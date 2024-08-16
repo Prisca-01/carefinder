@@ -2,7 +2,7 @@
 import React, { Component, ErrorInfo } from 'react';
 
 interface ErrorBoundaryProps {
-  children: React.ReactNode; 
+  children: React.ReactNode;
 }
 
 interface ErrorBoundaryState {

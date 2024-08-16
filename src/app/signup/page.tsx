@@ -143,7 +143,7 @@ const SignUp: React.FC = () => {
                 First Name
               </label>
               <input
-              id="firstName"
+                id="firstName"
                 type="text"
                 {...register('firstName', {
                   required: 'First name is required',
@@ -174,7 +174,7 @@ const SignUp: React.FC = () => {
               Username
             </label>
             <input
-            id="username"
+              id="username"
               type="text"
               {...register('username', { required: 'Username is required' })}
               className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
@@ -188,7 +188,7 @@ const SignUp: React.FC = () => {
               Email
             </label>
             <input
-            id="email"
+              id="email"
               type="email"
               {...register('email', { required: 'Email is required' })}
               className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
@@ -202,7 +202,7 @@ const SignUp: React.FC = () => {
               Password
             </label>
             <input
-            id="password"
+              id="password"
               type="password"
               {...register('password', { required: 'Password is required' })}
               className="mt-1 block w-full p-2 border border-gray-300 rounded-md"

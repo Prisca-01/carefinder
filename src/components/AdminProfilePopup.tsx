@@ -17,7 +17,10 @@ interface AdminProfilePopupProps {
   isOpen: boolean;
 }
 
-const AdminProfilePopup: React.FC<AdminProfilePopupProps> = ({ onClose, isOpen }) => {
+const AdminProfilePopup: React.FC<AdminProfilePopupProps> = ({
+  onClose,
+  isOpen,
+}) => {
   const [adminData, setAdminData] = useState<ProfileData | null>(null);
   const [isEditing, setIsEditing] = useState<boolean>(false);
 

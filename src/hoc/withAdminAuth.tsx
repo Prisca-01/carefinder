@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
-import { useAuth } from '../hooks/UseAuth'; 
-import { useRouter } from 'next/navigation'; 
+import { useAuth } from '../hooks/UseAuth';
+import { useRouter } from 'next/navigation';
 
 interface WithAdminAuthProps {
   // Any props I need for my component
@@ -17,9 +17,9 @@ const withAdminAuth = <P extends object>(
     React.useEffect(() => {
       if (!loading) {
         if (user === null) {
-          router.push('/signup'); 
+          router.push('/signup');
         } else if (user.role !== 'admin') {
-          router.push('/'); 
+          router.push('/');
         }
       }
     }, [user, loading, router]);

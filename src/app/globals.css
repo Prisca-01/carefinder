@@ -60,7 +60,6 @@ body {
   animation: pop 1s ease-in-out;
 }
 
-
 @keyframes slideIn {
   0% {
     background-image: url('/images/blog-head.jpg');
@@ -100,11 +99,11 @@ body {
 
 @media (max-width: 768px) {
   .bg-animated {
-    height: 250px; 
+    height: 250px;
   }
 
   .title-overlay h1 {
-    font-size: 2rem; 
+    font-size: 2rem;
     padding: 0.5rem;
   }
 }
@@ -115,7 +114,7 @@ body {
   }
 
   .title-overlay h1 {
-    font-size: 1.5rem; 
+    font-size: 1.5rem;
     padding: 0.5rem;
   }
 }

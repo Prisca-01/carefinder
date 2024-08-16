@@ -1,4 +1,3 @@
-// pages/_document.js
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 class MyDocument extends Document {
@@ -6,12 +5,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link
-            rel="preload"
-            href="/_next/static/css/app/layout.css"
-            as="style"
-          />
-          <link rel="stylesheet" href="/_next/static/css/app/layout.css" />
+          {/* Custom head elements can go here, but avoid including manual stylesheets */}
         </Head>
         <body>
           <Main />

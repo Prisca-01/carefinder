@@ -1,4 +1,4 @@
-declare module "mailgun-js" {
+declare module 'mailgun-js' {
   interface MailgunOptions {
     apiKey: string;
     domain: string;

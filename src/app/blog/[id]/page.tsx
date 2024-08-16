@@ -23,35 +23,35 @@ const BlogPostPage = async ({ params }: { params: { id: string } }) => {
 
   return (
     <>
-    <div className="bg-gray-100">
-      <Header />
-      <div className="relative h-60 w-full">
-        <Image
-          src={post.image}
-          alt={post.title}
-          fill
-          style={{ objectFit: 'cover' }}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="opacity-100"
-          priority
-        />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-3xl md:text-5xl font-bold text-white text-center bg-gray-700  bg-opacity-50 ">
-            {post.title}
-          </h1>
+      <div className="bg-gray-100">
+        <Header />
+        <div className="relative h-60 w-full">
+          <Image
+            src={post.image}
+            alt={post.title}
+            fill
+            style={{ objectFit: 'cover' }}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="opacity-100"
+            priority
+          />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <h1 className="text-3xl md:text-5xl font-bold text-white text-center bg-gray-700  bg-opacity-50 ">
+              {post.title}
+            </h1>
+          </div>
         </div>
-      </div>
-      {/* <div className="bg-animated relative w-full">
+        {/* <div className="bg-animated relative w-full">
         <div className="title-overlay">
           <h1>{post.title}</h1>
         </div>
       </div> */}
-      <div className="max-w-4xl mx-auto p-8">
-        <div className="prose prose-lg">
-          <p className="text-gray-700 leading-relaxed">{post.content}</p>
+        <div className="max-w-4xl mx-auto p-8">
+          <div className="prose prose-lg">
+            <p className="text-gray-700 leading-relaxed">{post.content}</p>
+          </div>
         </div>
-      </div>
-      <Footer />
+        <Footer />
       </div>
     </>
   );

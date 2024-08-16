@@ -1,9 +1,13 @@
-// {
-//   "extends": "next/core-web-vitals"
-// }
 {
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser",
+    "project": ["./tsconfig.json", "./functions/tsconfig.json"]
+  },
   "extends": ["next", "next/core-web-vitals", "plugin:prettier/recommended"],
   "globals": {
-  "vi": true
-}
+    "vi": true
+  },
+  "rules": {
+    "@next/next/no-document-import-in-page": "off"
+  }
 }

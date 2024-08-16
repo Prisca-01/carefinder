@@ -141,7 +141,11 @@ const AdminHeader: React.FC = () => {
                   className="absolute top-4 right-4 cursor-pointer"
                   onClick={toggleMenu}
                 />
-                <Link href="/dashboard" className="text-xl mb-4" onClick={toggleMenu}>
+                <Link
+                  href="/dashboard"
+                  className="text-xl mb-4"
+                  onClick={toggleMenu}
+                >
                   Home
                 </Link>
                 <Link

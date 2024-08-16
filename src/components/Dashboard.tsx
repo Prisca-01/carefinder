@@ -9,7 +9,6 @@ import Image from 'next/image';
 import { FaBars } from 'react-icons/fa';
 import Link from 'next/link';
 
-
 interface BlogPost {
   id: number;
   title: string;
@@ -98,7 +97,7 @@ const DashboardComponent: React.FC = () => {
           <h1 className="text-4xl font-bold mb-4 text-blue-600">
             Find the Best Hospitals Near You
           </h1>
-            <HospitalSearch/>
+          <HospitalSearch />
         </div>
       </div>
 

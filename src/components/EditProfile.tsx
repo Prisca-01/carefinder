@@ -64,7 +64,7 @@ const EditProfile: React.FC<EditProfileProps> = ({
               Profile Picture
             </label>
             <input
-            id="photoURL"
+              id="photoURL"
               type="file"
               onChange={(e) => setFile(e.target.files?.[0] || null)}
               className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
@@ -75,7 +75,7 @@ const EditProfile: React.FC<EditProfileProps> = ({
               First Name
             </label>
             <input
-            id="firstName"
+              id="firstName"
               type="text"
               {...register('firstName', { required: 'First name is required' })}
               className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
@@ -89,7 +89,7 @@ const EditProfile: React.FC<EditProfileProps> = ({
               Last Name
             </label>
             <input
-            id="lastName"
+              id="lastName"
               type="text"
               {...register('lastName', { required: 'Last name is required' })}
               className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
