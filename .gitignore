@@ -34,3 +34,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+.env
+src/utils/carefinder-aa4-firebase-adminsdk-6me59-67a706cbc8.json
