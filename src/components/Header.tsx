@@ -62,6 +62,12 @@ export default function Header() {
               Blog
             </Link>
             <Link
+              href="/help"
+              className="block py-2 px-4 hover:bg-blue-600 rounded"
+            >
+              Help
+            </Link>
+            <Link
               href="/login"
               className="block py-2 px-4 hover:bg-blue-600 rounded"
             >
