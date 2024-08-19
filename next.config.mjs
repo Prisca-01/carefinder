@@ -14,6 +14,16 @@ const nextConfig = {
       },
     ],
   },
+  webpack(config, { isServer }) {
+    // Add this rule to handle WebAssembly modules
+    config.experiments = {
+      asyncWebAssembly: true,
+      syncWebAssembly: true,
+      layers: true, // optional but useful for handling modules
+    };
+
+    return config;
+  },
 };
 
 export default nextConfig;

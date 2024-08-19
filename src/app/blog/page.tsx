@@ -28,11 +28,11 @@ const BlogPage = async () => {
 
       <div className="bg-animated relative w-full">
         <div className="title-overlay">
-          <h1>Blog Articles</h1>
+          <h1 className="text-gray-900">Blog Articles</h1>
         </div>
       </div>
 
-      <div className="mx-auto w-full max-w-7xl flex flex-col md:flex-row mt-12">
+      <div className="mx-auto w-full max-w-7xl flex flex-col md:flex-row mt-12 mb-20">
         <div className="w-full md:w-2/3">
           <div className="flex flex-col gap-14 mt-8">
             {posts.map((post) => (
@@ -48,8 +48,10 @@ const BlogPage = async () => {
                     priority
                     className="w-full h-auto object-cover rounded-md"
                   />
-                  <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white p-4">
-                    <h2 className="text-2xl font-semibold">{post.title}</h2>
+                  <div className="absolute bottom-0 left-0 w-full bg-gray-400 bg-opacity-50 text-blue-900 p-4">
+                    <h2 className="text-2xl font-semibold text-blue-900">
+                      {post.title}
+                    </h2>
                   </div>
                 </div>
                 <div className="p-4">
@@ -69,7 +71,7 @@ const BlogPage = async () => {
                   <p className="text-gray-700 mt-2">{post.excerpt}</p>
                   <div className="mt-4">
                     <Link href={`/blog/${post.id}`}>
-                      <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                      <button className="bg-blue-900 text-white px-4 py-2 rounded hover:bg-blue-700">
                         Read More
                       </button>
                     </Link>
@@ -84,13 +86,13 @@ const BlogPage = async () => {
         <div className="hidden md:block md:w-1/3 p-4">
           <h2 className="text-xl font-bold mb-4">Categories</h2>
           <ul>
-            <li className="mb-2 text-blue-600 hover:underline cursor-pointer">
+            <li className="mb-2 text-blue-900 hover:underline cursor-pointer">
               Health
             </li>
-            <li className="mb-2 text-blue-600 hover:underline cursor-pointer">
+            <li className="mb-2 text-blue-900 hover:underline cursor-pointer">
               Hospitals
             </li>
-            <li className="mb-2 text-blue-600 hover:underline cursor-pointer">
+            <li className="mb-2 text-blue-900 hover:underline cursor-pointer">
               Wellness
             </li>
           </ul>

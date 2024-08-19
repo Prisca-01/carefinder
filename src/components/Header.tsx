@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 export default function Header() {
@@ -11,13 +12,22 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed z-50 w-full bg-blue-600 p-4 text-white">
+    <header className="fixed z-50 w-full bg-blue-900 p-4 text-white">
       <div className="container flex justify-between items-center">
-        <h1 className="text-xl font-bold md:ml-32">
-          <Link href="/" className="mr-4">
-            Carefinder
-          </Link>
-        </h1>
+        {/* Logo */}
+        <div className="flex flex-row md:ml-24">
+          <Image
+            src="/images/logo.png"
+            alt="Logo Image"
+            width={25}
+            height={10}
+            priority
+          />
+          <h1 className="text-xl font-bold ">
+            <Link href="/">Carefinder</Link>
+          </h1>
+        </div>
+
         {/* Mobile Menu Button */}
         <button className="md:hidden text-2xl" onClick={toggleNav}>
           {isNavOpen ? <FaTimes /> : <FaBars />}
@@ -26,6 +36,9 @@ export default function Header() {
         <nav className="hidden md:flex md:space-x-8 md:justify-between">
           <Link href="/" className="mr-4">
             Home
+          </Link>
+          <Link href="/services" className="mr-4">
+            Services
           </Link>
           <Link href="/blog" className="mr-4">
             Blog
@@ -44,7 +57,7 @@ export default function Header() {
         </nav>
         {/* Mobile Navigation Overlay */}
         <div
-          className={`fixed top-0 right-0 h-full bg-blue-700 text-white w-full md:hidden transition-transform duration-300 ${isNavOpen ? 'translate-x-0' : 'translate-x-full'}`}
+          className={`fixed top-0 right-0 h-full bg-blue-900 text-white w-full md:hidden transition-transform duration-300 ${isNavOpen ? 'translate-x-0' : 'translate-x-full'}`}
         >
           <nav className="flex flex-col items-start pt-16 pl-4">
             <button
@@ -55,25 +68,31 @@ export default function Header() {
             </button>
             <Link
               href="/"
-              className="block py-2 px-4 hover:bg-blue-600 rounded border-b border-gray-300 w-full"
+              className="block py-2 px-4 hover:bg-blue-700 rounded border-b border-gray-300 w-full"
             >
               Home
             </Link>
             <Link
+              href="/services"
+              className="block py-2 px-4 hover:bg-blue-700 rounded border-b border-gray-300 w-full"
+            >
+              Services
+            </Link>
+            <Link
               href="/blog"
-              className="block py-2 px-4 hover:bg-blue-600 rounded border-b border-gray-300 w-full"
+              className="block py-2 px-4 hover:bg-blue-700 rounded border-b border-gray-300 w-full"
             >
               Blog
             </Link>
             <Link
               href="/help"
-              className="block py-2 px-4 hover:bg-blue-600 rounded border-b border-gray-300 w-full"
+              className="block py-2 px-4 hover:bg-blue-700 rounded border-b border-gray-300 w-full"
             >
               Help
             </Link>
             <Link
               href="/login"
-              className="block py-2 px-4 hover:bg-blue-600 rounded border-b border-gray-300 w-full"
+              className="block py-2 px-4 hover:bg-blue-700 rounded border-b border-gray-300 w-full"
             >
               Log in
             </Link>

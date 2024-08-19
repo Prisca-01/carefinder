@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import { saveAs } from 'file-saver';
 import { parse } from 'json2csv';
+
 interface Hospital {
   category: string;
   id: string;
@@ -15,12 +15,13 @@ interface Hospital {
   city: string;
   state: string;
 }
-interface ExportButtonProps {
+
+interface ShareCSVButtonProps {
   hospitals: Hospital[];
 }
 
-const ExportButton: React.FC<ExportButtonProps> = ({ hospitals }) => {
-  const handleExport = () => {
+const ShareCSVButton: React.FC<ShareCSVButtonProps> = ({ hospitals }) => {
+  const handleShare = () => {
     try {
       const csv = parse(hospitals, {
         fields: [
@@ -35,20 +36,28 @@ const ExportButton: React.FC<ExportButtonProps> = ({ hospitals }) => {
         ],
       });
       const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-      saveAs(blob, 'hospitals.csv');
+      const file = new File([blob], 'hospitals.csv', {
+        type: 'text/csv;charset=utf-8;',
+      });
+
+      const email =
+        'mailto:?subject=Hospital Data CSV&body=Find attached the hospital data.&attachment=' +
+        encodeURIComponent(file.name);
+
+      window.location.href = email;
     } catch (error) {
-      console.error('Error exporting CSV:', error);
+      console.error('Error sharing CSV:', error);
     }
   };
 
   return (
     <button
-      onClick={handleExport}
-      className="bg-blue-900 text-white px-4 py-2 rounded hover:bg-blue-700"
+      onClick={handleShare}
+      className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700"
     >
-      Export to CSV
+      Share CSV via Email
     </button>
   );
 };
 
-export default ExportButton;
+export default ShareCSVButton;

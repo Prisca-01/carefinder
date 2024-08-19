@@ -197,7 +197,7 @@ const HospitalSearch: React.FC = () => {
           <select
             value={state}
             onChange={handleStateChange}
-            className="p-2 text-gray-600 border border-gray-300 rounded-full outline-none focus:outline-blue-600 w-72 h-14"
+            className="p-2 text-gray-600 border border-gray-300 rounded-full outline-none focus:outline-blue-900 w-72 h-14"
           >
             <option value="Select state" defaultChecked>
               Select a state...
@@ -212,7 +212,7 @@ const HospitalSearch: React.FC = () => {
           <select
             value={city}
             onChange={(e) => setCity(e.target.value)}
-            className="p-2 text-gray-600 border border-gray-300 rounded-full outline-none focus:outline-blue-600 w-72 h-14"
+            className="p-2 text-gra900 border border-gray-300 rounded-full outline-none focus:outline-blue-900 w-72 h-14"
             disabled={!state}
           >
             <option value="Select city" defaultChecked>
@@ -227,7 +227,7 @@ const HospitalSearch: React.FC = () => {
 
           <button
             type="submit"
-            className="text-white px-6 py-3 rounded-full text-lg font-semibold bg-blue-600 hover:bg-gray-400 transition duration-300"
+            className="text-white px-6 py-3 rounded-full text-lg font-semibold bg-blue-900 hover:bg-blue-700 transition duration-300"
           >
             Search
           </button>

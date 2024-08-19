@@ -36,7 +36,7 @@ const BlogPostPage = async ({ params }: { params: { id: string } }) => {
             priority
           />
           <div className="absolute inset-0 flex items-center justify-center">
-            <h1 className="text-3xl md:text-5xl font-bold text-white text-center bg-gray-700  bg-opacity-50 ">
+            <h1 className="text-3xl md:text-5xl font-bold text-blue-900 text-center bg-gray-700  bg-opacity-50 p-4">
               {post.title}
             </h1>
           </div>

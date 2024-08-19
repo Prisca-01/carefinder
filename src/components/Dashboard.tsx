@@ -57,7 +57,7 @@ const DashboardComponent: React.FC = () => {
         >
           <button
             onClick={toggleCategories}
-            className="inline-flex items-center justify-center mt-24 text-blue-800 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+            className="inline-flex items-center justify-center mt-24 text-blue-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
           >
             <FaBars className="mr-2" />
             Browse Categories
@@ -94,7 +94,7 @@ const DashboardComponent: React.FC = () => {
 
         {/* Overlay Content */}
         <div className="relative z-10 flex flex-col items-center justify-center py-16 text-center text-white h-[600px]">
-          <h1 className="text-4xl font-bold mb-4 text-blue-600">
+          <h1 className="text-4xl font-bold mb-4 text-blue-900">
             Find the Best Hospitals Near You
           </h1>
           <HospitalSearch />
@@ -103,7 +103,7 @@ const DashboardComponent: React.FC = () => {
 
       {/* Featured Hospitals */}
       <section className="w-full max-w-7xl mx-auto p-4 mt-36 mb-10">
-        <h2 className="text-3xl font-bold mb-10 text-center">
+        <h2 className="text-3xl font-bold mb-10 text-center text-blue-900">
           Featured Hospitals
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -122,10 +122,7 @@ const DashboardComponent: React.FC = () => {
             </h3>
             <p className="text-gray-700">Location: Ikeja, Lagos</p>
             <p className="text-gray-500">Category: General</p>
-            <button
-              onClick={() => router.push('/hospital/1')}
-              className="mt-2 p-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-            >
+            <button className="mt-2 p-2 bg-blue-900 text-white rounded hover:bg-blue-700">
               View Details
             </button>
           </div>
@@ -145,10 +142,7 @@ const DashboardComponent: React.FC = () => {
               Location: Central Business District, Abuja
             </p>
             <p className="text-gray-500">Category: General</p>
-            <button
-              onClick={() => router.push('/hospital/2')}
-              className="mt-2 p-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-            >
+            <button className="mt-2 p-2 bg-blue-900 text-white rounded hover:bg-blue-700">
               View Details
             </button>
           </div>
@@ -166,10 +160,7 @@ const DashboardComponent: React.FC = () => {
             <h3 className="text-xl font-bold">University College Hospital</h3>
             <p className="text-gray-700">Location: Ibadan, Oyo State</p>
             <p className="text-gray-500">Category: Teaching Hospital</p>
-            <button
-              onClick={() => router.push('/hospital/3')}
-              className="mt-2 p-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-            >
+            <button className="mt-2 p-2 bg-blue-900 text-white rounded hover:bg-blue-700">
               View Details
             </button>
           </div>
@@ -178,7 +169,9 @@ const DashboardComponent: React.FC = () => {
 
       {/* Articles Section */}
       <section className="w-full max-w-7xl mx-auto p-4 shadow-lg rounded-lg mt-36 mb-24">
-        <h2 className="text-3xl font-bold mb-4 text-center">Articles & Tips</h2>
+        <h2 className="text-3xl font-bold mb-4 text-center text-blue-900">
+          Articles & Tips
+        </h2>
         <p className="text-xl mb-16 text-center text-gray-500">
           Browse the latest health articles on our blog{' '}
         </p>
@@ -205,7 +198,7 @@ const DashboardComponent: React.FC = () => {
         <div className="flex justify-center mt-8">
           <Link
             href="/blog"
-            className="bg-blue-500 text-white px-6 py-3 rounded-md hover:bg-blue-600 transition duration-200 shadow-lg"
+            className="bg-blue-900 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition duration-200 shadow-lg"
           >
             View Blog
           </Link>

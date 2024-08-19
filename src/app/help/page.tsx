@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function HelpPage() {
   return (
     <div className="min-h-screen bg-gray-100 text-gray-900">
-      <header className="bg-blue-600 text-white py-4">
+      <header className="bg-blue-900 text-white py-4">
         <div className="container mx-auto px-4 flex items-center justify-between">
           <h1 className="text-2xl font-bold">Carefinder Help Page</h1>
           <nav>
@@ -111,7 +111,7 @@ export default function HelpPage() {
                 Follow our{' '}
                 <Link
                   href="/getting-started"
-                  className="text-blue-600 hover:underline"
+                  className="text-blue-900 hover:underline"
                 >
                   Getting Started Guide
                 </Link>{' '}
@@ -124,7 +124,7 @@ export default function HelpPage() {
                 Learn how to use the search feature effectively with our{' '}
                 <Link
                   href="/search-guide"
-                  className="text-blue-600 hover:underline"
+                  className="text-blue-900 hover:underline"
                 >
                   Search Guide
                 </Link>
@@ -137,7 +137,7 @@ export default function HelpPage() {
                 Find out how to submit new hospital entries with our{' '}
                 <Link
                   href="/submission-guide"
-                  className="text-blue-600 hover:underline"
+                  className="text-blue-900 hover:underline"
                 >
                   Submission Guide
                 </Link>
@@ -162,14 +162,14 @@ export default function HelpPage() {
             to our support team at{' '}
             <Link
               href="mailto:priscaonyemaechi26@gmail.com"
-              className="text-blue-600 hover:underline"
+              className="text-blue-900 hover:underline"
             >
               support@example.com
             </Link>{' '}
             or use the{' '}
             <Link
               href="/contact-form"
-              className="text-blue-600 hover:underline"
+              className="text-blue-900 hover:underline"
             >
               contact form
             </Link>
@@ -186,7 +186,7 @@ export default function HelpPage() {
             suggestions or comments to help us improve Carefinder through our{' '}
             <Link
               href="/feedback-form"
-              className="text-blue-600 hover:underline"
+              className="text-blue-900 hover:underline"
             >
               Feedback Form
             </Link>

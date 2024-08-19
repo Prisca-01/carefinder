@@ -63,23 +63,23 @@ const AdminHeader: React.FC = () => {
 
   return (
     <>
-      <header className="bg-gray-100 p-4 text-black fixed w-full z-50">
+      <header className="bg-gray-100 p-4 text-blue-900 fixed w-full z-50">
         <div className="container mx-auto flex justify-between items-center h-16">
-          <h1 className="text-3xl font-bold text-blue-600 ml-6">
+          <h1 className="text-3xl font-bold text-blue-900 ml-6">
             <Link href="/dashboard" className="mr-4">
               Carefinder
             </Link>
           </h1>
           <nav className="hidden md:flex space-x-8 mr-12 ">
-            <Link href="/dashboard" className="text-black text-l">
+            <Link href="/dashboard" className="text-blue-900 text-l">
               Home
             </Link>
-            <Link href="/blog" className="text-black text-l">
+            <Link href="/blog" className="text-blue-900 text-l">
               Blog
             </Link>
             <Link
               href="/hospitalentry"
-              className="flex items-center text-black text-l"
+              className="flex items-center text-blue-900 text-l"
             >
               <FaPlus className="mr-2" />
               Add Entry
@@ -109,21 +109,21 @@ const AdminHeader: React.FC = () => {
                       onClick={openProfilePopup}
                       className="w-full flex items-center p-2 hover:bg-gray-100"
                     >
-                      <FaUser className="mr-2" />
+                      <FaUser className="mr-2 text-blue-900" />
                       View Profile
                     </button>
                     <Link
                       href="/hospitalentry"
                       className="flex items-center p-2 hover:bg-gray-100"
                     >
-                      <FaBook className="mr-2" />
+                      <FaBook className="mr-2 text-blue-900" />
                       My Entries
                     </Link>
                     <button
                       onClick={handleLogout}
                       className="w-full text-left flex items-center p-2 hover:bg-gray-100"
                     >
-                      <FaSignOutAlt className="mr-2" />
+                      <FaSignOutAlt className="mr-2 text-blue-900" />
                       Log Out
                     </button>
                   </div>
@@ -147,21 +147,21 @@ const AdminHeader: React.FC = () => {
                 />
                 <Link
                   href="/dashboard"
-                  className="text-xl mb-4 hover:text-blue-500"
+                  className="text-xl mb-4 hover:text-blue-900"
                   onClick={toggleMenu}
                 >
                   Home
                 </Link>
                 <Link
                   href="/blog"
-                  className="text-xl mb-4 hover:text-blue-500"
+                  className="text-xl mb-4 hover:text-blue-900"
                   onClick={toggleMenu}
                 >
                   Blog
                 </Link>
                 <Link
                   href="/hospitalentry"
-                  className="text-xl mb-4 hover:text-blue-500"
+                  className="text-xl mb-4 hover:text-blue-900"
                   onClick={toggleMenu}
                 >
                   Add Entry
@@ -170,20 +170,20 @@ const AdminHeader: React.FC = () => {
                   <>
                     <button
                       onClick={openProfilePopup}
-                      className="text-xl mb-4 hover:text-blue-500"
+                      className="text-xl mb-4 hover:text-blue-900"
                     >
                       View Profile
                     </button>
                     <Link
                       href="/hospitalentry"
-                      className="text-xl mb-4 hover:text-blue-500"
+                      className="text-xl mb-4 hover:text-blue-900"
                       onClick={toggleMenu}
                     >
                       My Entries
                     </Link>
                     <button
                       onClick={handleLogout}
-                      className="text-xl mb-4 hover:text-blue-500"
+                      className="text-xl mb-4 hover:text-blue-900"
                     >
                       Log Out
                     </button>

@@ -4,8 +4,17 @@ import Footer from '../../components/Footer';
 import Image from 'next/image';
 import Link from 'next/link';
 import ExportButton from '../../components/ExportButton';
+import ShareCSVButton from '../../components/ShareButton';
 import { firestore } from '../../utils/firebaseAdmin';
 import admin from 'firebase-admin';
+import {
+  FaHospitalUser,
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaLink,
+  FaFileAlt,
+} from 'react-icons/fa';
 
 interface Hospital {
   category: string;
@@ -22,6 +31,7 @@ interface Hospital {
   hospitalName: string;
   createdAt?: Date;
 }
+const iconStyle = { width: '20px', height: '20px' };
 
 async function fetchHospitals(
   state: string,
@@ -81,13 +91,16 @@ export default async function SearchResultsPage({
           <h1 className="text-3xl font-bold mb-6 text-center mt-40">
             Hospital Search Results for {city}, {state}
           </h1>
-
+          <p className="text-xl font-semibold mb-4 text-center text-gray-700">
+            {hospitals.length} hospitals found in your location
+          </p>
           <div className="mb-6 flex justify-center space-x-4">
             <ExportButton hospitals={hospitals} />
+            <ShareCSVButton hospitals={hospitals} />
           </div>
 
           {hospitals.length > 0 ? (
-            <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
               {hospitals.map((hospital) => (
                 <li
                   key={hospital.id}
@@ -101,32 +114,39 @@ export default async function SearchResultsPage({
                     priority
                     className="w-full h-40 object-cover rounded mb-4"
                   />
-                  <h2 className="font-bold text-xl mb-2">
+                  <h2 className="font-bold text-xl flex items-center mb-2 text-blue-900">
+                    <FaHospitalUser className="mr-2 text-blue-900" />
                     {hospital.name} {hospital.hospitalName}
                   </h2>
-                  <p className="text-sm text-gray-600 mb-1">
-                    <span className="font-bold"> Address:</span>{' '}
+                  <p className="text-sm text-gray-600 mb-1 flex items-center">
+                    <FaMapMarkerAlt className="mr-2 text-blue-900" />{' '}
                     {hospital.address}
                   </p>
-                  <p className="text-sm text-gray-600 mb-1">
-                    <span className="font-bold"> Phone:</span> {hospital.phone}
+                  <p className="text-sm text-gray-600 mb-1 flex items-center">
+                    <FaPhoneAlt className="mr-2 text-blue-900" />{' '}
+                    {hospital.phone}
                   </p>
-                  <p className="text-sm text-gray-600 mb-1">
-                    <span className="font-bold">Email: </span> {hospital.email}
+                  <p className="text-sm text-gray-600 mb-1 flex items-center">
+                    <FaEnvelope className="mr-2 text-blue-900" />{' '}
+                    {hospital.email}
                   </p>
-                  <p className="text-sm text-gray-600">
-                    <span className="font-bold"> Description:</span>{' '}
+                  <p className="text-sm text-gray-600 flex items-center">
+                    <FaFileAlt
+                      style={iconStyle}
+                      className="mr-2 text-blue-900 text-2xl"
+                    />{' '}
                     {hospital.description}
                   </p>
-                  <p className="overflow-hidden break-words">
+                  <p className="overflow-hidden break-words flex items-center">
+                    <FaLink className="mr-2 text-blue-900 text-lg" />
                     {hospital.website && isValidURL(hospital.website) ? (
                       <Link
                         href={hospital.website}
                         target="_blank"
                         rel="noreferrer"
-                        className="text-blue-600 hover:underline truncate"
+                        className="text-blue-900 hover:underline truncate flex items-center"
                       >
-                        Website: {hospital.website}
+                        {hospital.website}
                       </Link>
                     ) : (
                       <p>No website available</p>
@@ -142,6 +162,19 @@ export default async function SearchResultsPage({
               </p>
             </div>
           )}
+
+          <div className="flex flex-col items-center justify-center mt-40 mb-20">
+            <h3 className="text-2xl text-blue-900 mb-6">
+              Want to list a hospital?
+            </h3>
+
+            <Link
+              href="/add-hospital"
+              className="bg-blue-900 text-white px-6 py-2 rounded-full text-lg font-semibold hover:bg-blue-700 transition duration-300"
+            >
+              Get Started
+            </Link>
+          </div>
         </div>
         <Footer />
       </div>

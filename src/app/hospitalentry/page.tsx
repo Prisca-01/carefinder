@@ -61,8 +61,6 @@ export default function AddEntry() {
   const [email, setEmail] = useState('');
   const [website, setWebsite] = useState('');
   const [category, setCategory] = useState('');
-  const [photo, setPhoto] = useState<File | null>(null);
-  const [photoPreview, setPhotoPreview] = useState<string | null>(null);
   const [description, setDescription] = useState('');
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
@@ -79,8 +77,6 @@ export default function AddEntry() {
     setCategory('');
     setDescription('');
     setTermsAccepted(false);
-    setPhoto(null);
-    setPhotoPreview(null);
   };
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -115,7 +111,6 @@ export default function AddEntry() {
       await addDoc(collection(db, 'hospitals'), {
         ...formData,
         createdAt: new Date(),
-        photoURL: photoPreview || '', // Optional photo URL
       });
       resetForm();
       setSuccessMessage('Hospital entry added successfully!');
@@ -151,34 +146,19 @@ export default function AddEntry() {
   //   }
   // };
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const selectedFile = e.target.files?.[0] || null;
-    setPhoto(selectedFile);
-
-    if (selectedFile) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setPhotoPreview(reader.result as string);
-      };
-      reader.readAsDataURL(selectedFile);
-    } else {
-      setPhotoPreview(null);
-    }
-  };
-
   return (
     <>
       <AdminHeader />
       <div>
         <div className="relative h-[350px]">
           <Image
-            src="/images/hospitals/hospitals3.jpg"
+            src="/images/hospitals/hospitals2.jpg"
             alt="Hospital Background"
             fill
             className="object-cover object-center"
             priority
           />
-          <h1 className="absolute inset-0 flex items-center justify-center text-center text-4xl font-bold text-white">
+          <h1 className="absolute inset-0 flex items-center justify-center text-center text-5xl font-bold text-blue-900">
             Add Hospital Entry
           </h1>
         </div>
@@ -361,40 +341,6 @@ export default function AddEntry() {
 
             <div>
               <label
-                htmlFor="file"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Entry Photo (Optional)
-              </label>
-              <input
-                type="file"
-                id="file"
-                name="file"
-                accept="image/*"
-                onChange={handleFileChange}
-                className="mt-1 block w-full text-sm text-gray-900 file:py-2 file:px-4 file:border file:border-gray-300 file:rounded-md file:text-sm file:font-medium file:bg-gray-50 file:text-gray-700 hover:file:bg-gray-100"
-              />
-              {photo && (
-                <div className="mt-4">
-                  <p className="text-sm text-gray-600">Selected file:</p>
-                  <p className="text-sm font-medium">{photo.name}</p>
-                  {photoPreview && (
-                    <div className="mt-2">
-                      <Image
-                        src={photoPreview}
-                        alt="Preview"
-                        width={200}
-                        height={200}
-                        className="border border-gray-300 rounded-md"
-                      />
-                    </div>
-                  )}
-                </div>
-              )}
-            </div>
-
-            <div>
-              <label
                 htmlFor="description"
                 className="block text-sm font-medium text-gray-700"
               >
@@ -428,10 +374,7 @@ export default function AddEntry() {
                 />
                 <span className="ml-2 text-sm text-gray-600">
                   I agree to the{' '}
-                  <Link
-                    href="/terms-and-conditions"
-                    className="text-blue-600 hover:underline"
-                  >
+                  <Link href="/terms" className="text-blue-900 hover:underline">
                     terms and conditions
                   </Link>
                 </span>
@@ -441,7 +384,7 @@ export default function AddEntry() {
             <div className="flex justify-center">
               <button
                 type="submit"
-                className="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="bg-blue-900 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700"
               >
                 Submit Entry
               </button>

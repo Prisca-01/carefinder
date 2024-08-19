@@ -104,7 +104,7 @@ const SignUp: React.FC = () => {
           className="bg-white p-8 m-24  rounded shadow-md w-full max-w-lg"
         >
           <h1 className="text-2xl font-bold mb-6 text-center">
-            Signup to use Carefinder
+            Signup as Admin
           </h1>
 
           {/* Social Media Sign-Up */}
@@ -114,12 +114,6 @@ const SignUp: React.FC = () => {
               className="flex items-center justify-center p-2 border border-gray-300 rounded-md hover:bg-gray-200"
             >
               <FaApple className="text-2xl" />
-            </button>
-            <button
-              type="button"
-              className="flex items-center justify-center p-2 border border-gray-300 rounded-md hover:bg-gray-200"
-            >
-              <FaGithub className="text-2xl" />
             </button>
             <button
               type="button"
@@ -217,7 +211,7 @@ const SignUp: React.FC = () => {
           )}
           <button
             type="submit"
-            className="w-full p-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+            className="w-full p-2 bg-blue-900 text-white rounded hover:bg-blue-700"
           >
             Sign Up
           </button>
@@ -225,7 +219,7 @@ const SignUp: React.FC = () => {
           <div className="mt-4 text-center">
             <p>
               Already have an account?{' '}
-              <a href="/login" className="text-blue-500 hover:underline">
+              <a href="/login" className="text-blue-900 hover:underline">
                 Sign In
               </a>
             </p>

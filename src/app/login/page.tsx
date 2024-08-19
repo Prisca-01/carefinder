@@ -67,13 +67,6 @@ export default function Login() {
             </button>
             <button
               type="button"
-              // onClick={() => handleSocialLogin('github')}
-              className="flex items-center justify-center p-2 border border-gray-300 rounded-md hover:bg-gray-200"
-            >
-              <FaGithub className="text-2xl" />
-            </button>
-            <button
-              type="button"
               onClick={() => handleSocialLogin('google')}
               className="flex items-center justify-center p-2 border border-gray-300 rounded-md hover:bg-gray-200"
             >
@@ -119,7 +112,7 @@ export default function Login() {
 
           <button
             type="submit"
-            className="w-full p-2 bg-blue-400 text-white rounded hover:bg-blue-600"
+            className="w-full p-2 bg-blue-900 text-white rounded hover:bg-blue-700"
           >
             Login
           </button>
@@ -127,7 +120,7 @@ export default function Login() {
           <div className="mt-4 text-center">
             <p>
               Don&apos;t have an account?{' '}
-              <a href="/signup" className="text-blue-400 hover:underline">
+              <a href="/signup" className="text-blue-900 hover:underline">
                 Sign Up
               </a>
             </p>
