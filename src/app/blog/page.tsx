@@ -26,9 +26,20 @@ const BlogPage = async () => {
     <div className="bg-gray-100">
       <Header />
 
-      <div className="bg-animated relative w-full">
-        <div className="title-overlay">
-          <h1 className="text-gray-900">Blog Articles</h1>
+      <div className="relative h-60 w-full">
+        <Image
+          src="/images/Blog-Image.jpg"
+          alt="Blog Image"
+          fill
+          style={{ objectFit: 'cover' }}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="opacity-100"
+          priority
+        />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <h1 className="text-3xl md:text-5xl font-bold text-blue-900 text-center bg-gray-200  bg-opacity-25 p-4">
+            Blog Articles{' '}
+          </h1>
         </div>
       </div>
 

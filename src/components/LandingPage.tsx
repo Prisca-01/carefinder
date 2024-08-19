@@ -59,16 +59,16 @@ const LandingPage: React.FC = () => {
 
         {/* Hospital Search Section */}
         <div className="flex flex-col justify-center items-center">
-          <h1 className="text-4xl font-bold mb-4 text-blue-900 text-center">
+          <h2 className="text-3xl font-bold mb-4 text-blue-900 text-center">
             Find the Best Hospitals Near You
-          </h1>
+          </h2>
           <HospitalSearch />
         </div>
 
         {/* Explore section */}
         <section className="py-16 bg-gray-100">
           <div className="max-w-6xl mx-auto px-4 text-center">
-            <h2 className="text-4xl font-bold mb-10 text-blue-900">
+            <h2 className="text-3xl font-bold mb-10 text-blue-900">
               Explore what a free Carefinder account has to offer and create
               yours today
             </h2>
@@ -85,7 +85,7 @@ const LandingPage: React.FC = () => {
         {/* Features Section */}
         <section id="features" className="py-20 bg-white mb-20">
           <div className="max-w-6xl mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">
+            <h2 className="text-3xl font-bold text-center text-blue-900 mb-16">
               Features
             </h2>
             <div className="grid md:grid-cols-3 gap-12">
@@ -192,14 +192,16 @@ const LandingPage: React.FC = () => {
         </section>
         <section id="testimonials" className="py-20 bg-gray-100">
           <div className="max-w-6xl mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-16 text-blue-900">
+            <h2 className="text-3xl font-bold text-center mb-16 text-blue-900">
               What Our Users Are Saying
             </h2>
             <div className="grid md:grid-cols-3 gap-12">
               <div className="bg-white p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105">
                 <div className="flex items-center mb-4">
                   <FaQuoteLeft className="text-blue-900 text-3xl mr-2" />
-                  <h3 className="text-2xl font-semibold">John Doe</h3>
+                  <h3 className="text-2xl font-semibold text-blue-900">
+                    John Doe
+                  </h3>
                 </div>
                 <p className="text-gray-700 text-lg italic">
                   &quot;Carefinder made it so easy to find the right healthcare
@@ -211,7 +213,9 @@ const LandingPage: React.FC = () => {
               <div className="bg-white p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105">
                 <div className="flex items-center mb-4">
                   <FaQuoteLeft className="text-blue-900 text-3xl mr-2" />
-                  <h3 className="text-2xl font-semibold">Jane Smith</h3>
+                  <h3 className="text-2xl font-semibold text-blue-900">
+                    Jane Smith
+                  </h3>
                 </div>
                 <p className="text-gray-700 text-lg italic">
                   &quot;The comprehensive listings on Carefinder helped me
@@ -224,7 +228,9 @@ const LandingPage: React.FC = () => {
               <div className="bg-white p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105">
                 <div className="flex items-center mb-4">
                   <FaQuoteLeft className="text-blue-900 text-3xl mr-2" />
-                  <h3 className="text-2xl font-semibold">Emily Johnson</h3>
+                  <h3 className="text-2xl font-semibold text-blue-900">
+                    Emily Johnson
+                  </h3>
                 </div>
                 <p className="text-gray-700 text-lg italic">
                   &quot;Thanks to Carefinder, I found a trusted hospital close
@@ -237,7 +243,7 @@ const LandingPage: React.FC = () => {
         </section>
         {/* Booking Section */}
         <div className="mt-28 mb-28">
-          <h1 className="text-4xl font-bold mb-4 text-blue-900 text-center">
+          <h1 className="text-3xl font-bold mb-4 text-blue-900 text-center">
             Book A Hospital Appointment
           </h1>
           <BookingSection />
