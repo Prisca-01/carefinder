@@ -14,13 +14,13 @@ import {
 const LandingPage: React.FC = () => {
   return (
     <>
-      <div className="min-h-screen">
-        <section className="flex flex-col md:flex-row justify-between h-[580px] md:h-[550px] items-center py-12 mt-16 px-4 md:px-8 lg:px-16">
-          <div className="w-full md:w-1/2 mb-40 md:mb-0 mt-10 text-center md:text-left">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 text-blue-900 leading-tight">
+      <div className="min-h-screen bg-gray-100">
+        <section className=" w-full bg-blue-900 flex flex-col md:flex-row justify-between h-[580px] md:h-[600px] items-center py-12 mt-11 px-4 md:px-8 lg:px-16">
+          <div className="md:w-1/2 mb-40 md:mb-0 mt-10 text-center md:ml-10   md:text-left">
+            <h1 className="text-4xl md:text-6xl font-bold mb-4 text-gray-100 leading-tight">
               Access Quality Healthcare with Carefinder
             </h1>
-            <p className="text-lg md:text-xl mb-8 text-gray-700 leading-relaxed">
+            <p className="text-lg md:text-xl mb-8 text-gray-100 leading-relaxed">
               Discover a world of trusted healthcare providers tailored to your
               needs. Whether you&apos;re seeking routine care, specialized
               treatment, or emergency services, Carefinder is your dedicated
@@ -28,16 +28,16 @@ const LandingPage: React.FC = () => {
             </p>
             <Link
               href="/signup"
-              className="text-white px-6 py-3 rounded-full text-lg font-semibold bg-blue-900 hover:bg-blue-700 transition duration-300 shadow-lg"
+              className="text-blue-900 px-6 py-3 rounded-full text-lg font-semibold bg-gray-100 hover:bg-blue-700 hover:text-gray-100 transition duration-300 shadow-lg"
             >
               Get Started
             </Link>
           </div>
-          <div className="hidden md:flex w-full md:w-1/2 justify-evenly items-center relative">
+          <div className="hidden md:flex w-full md:mr-12 md:w-1/2 justify-evenly items-center relative">
             <div className="relative">
               <Image
-                src="/images/Blog-image.jpg"
-                alt="Healthcare Professionals"
+                src="/images/consultation.jpg"
+                alt="Patient Consultation"
                 width={400}
                 height={400}
                 priority
@@ -45,8 +45,8 @@ const LandingPage: React.FC = () => {
               />
               <div className="absolute top-1/2 right-0 transform translate-x-1/2">
                 <Image
-                  src="/images/Blog-image.jpg"
-                  alt="Patient Consultation"
+                  src="/images/land.jpg"
+                  alt="Health Professionals"
                   width={200}
                   height={200}
                   priority
@@ -58,7 +58,7 @@ const LandingPage: React.FC = () => {
         </section>
 
         {/* Hospital Search Section */}
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center mt-36 md:mt-30">
           <h2 className="text-3xl font-bold mb-4 text-blue-900 text-center">
             Find the Best Hospitals Near You
           </h2>
@@ -66,7 +66,7 @@ const LandingPage: React.FC = () => {
         </div>
 
         {/* Explore section */}
-        <section className="py-16 bg-gray-100">
+        <section className="py-16 bg-gray-100 md:mt-16">
           <div className="max-w-6xl mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-10 text-blue-900">
               Explore what a free Carefinder account has to offer and create
@@ -122,11 +122,11 @@ const LandingPage: React.FC = () => {
             </div>
           </div>
           {/* Featured Hospitals */}
-          <section className="w-full max-w-7xl mx-auto p-4 mt-36 mb-10">
+          <section className="w-full mx-auto p-4 mt-36 mb-10">
             <h2 className="text-3xl font-bold mb-10 text-center text-blue-900">
               Featured Hospitals
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:mx-20">
               {/* Hospital 1 */}
               <div className="bg-gray-100 p-4 border flex flex-col items-center border-gray-300 rounded-md shadow-md">
                 <Image
@@ -137,12 +137,14 @@ const LandingPage: React.FC = () => {
                   className="object-cover rounded-md mb-4"
                   priority
                 />
-                <h3 className="text-xl font-bold">
+                <h3 className="text-xl font-bold text-blue-900 text-center">
                   Lagos State University Teaching Hospital
                 </h3>
-                <p className="text-gray-700">Location: Ikeja, Lagos</p>
-                <p className="text-gray-500">Category: General</p>
-                <button className="mt-2 p-2 bg-blue-900 text-white rounded hover:bg-blue-700">
+                <p className="text-gray-700 text-center">
+                  Location: Ikeja, Lagos
+                </p>
+                <p className="text-gray-700 text-center">Category: General</p>
+                <button className="mt-2 p-2 bg-blue-900 text-white rounded hover:bg-blue-700 text-center">
                   View Details
                 </button>
               </div>
@@ -157,12 +159,14 @@ const LandingPage: React.FC = () => {
                   className="object-cover rounded-md mb-4"
                   priority
                 />
-                <h3 className="text-xl font-bold">National Hospital Abuja</h3>
-                <p className="text-gray-700">
+                <h3 className="text-xl font-bold text-blue-900 text-center">
+                  National Hospital Abuja
+                </h3>
+                <p className="text-gray-700 text-center">
                   Location: Central Business District, Abuja
                 </p>
-                <p className="text-gray-500">Category: General</p>
-                <button className="mt-2 p-2 bg-blue-900 text-white rounded hover:bg-blue-700">
+                <p className="text-gray-700 text-center">Category: General</p>
+                <button className="mt-2 p-2 bg-blue-900 text-white rounded hover:bg-blue-700 text-center">
                   View Details
                 </button>
               </div>
@@ -177,12 +181,16 @@ const LandingPage: React.FC = () => {
                   className="object-cover rounded-md mb-4"
                   priority
                 />
-                <h3 className="text-xl font-bold">
+                <h3 className="text-xl font-bold text-blue-900 text-center">
                   University College Hospital
                 </h3>
-                <p className="text-gray-700">Location: Ibadan, Oyo State</p>
-                <p className="text-gray-500">Category: Teaching Hospital</p>
-                <button className="mt-2 p-2 bg-blue-900 text-white rounded hover:bg-blue-700">
+                <p className="text-gray-700 text-center">
+                  Location: Ibadan, Oyo State
+                </p>
+                <p className="text-gray-700 text-center">
+                  Category: Teaching Hospital
+                </p>
+                <button className="mt-2 p-2 bg-blue-900 text-white rounded hover:bg-blue-700 text-center">
                   View Details
                 </button>
               </div>
@@ -242,7 +250,7 @@ const LandingPage: React.FC = () => {
           </div>
         </section>
         {/* Booking Section */}
-        <div className="mt-28 mb-28">
+        <div className="mt-28 mb-28 bg-gray-100 md:mr-16 md:ml-28">
           <h1 className="text-3xl font-bold mb-4 text-blue-900 text-center">
             Book A Hospital Appointment
           </h1>
@@ -250,7 +258,7 @@ const LandingPage: React.FC = () => {
         </div>
 
         {/* Call to Action Section */}
-        <section className="flex items-center bg-blue-900 text-white h-[400px]">
+        <section className="flex items-center bg-blue-900 text-white h-[350px]">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-6">
               Get Started with Carefinder Today!

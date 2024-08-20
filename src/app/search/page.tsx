@@ -88,8 +88,8 @@ export default async function SearchResultsPage({
       <div className="bg-gray-100">
         <Header />
         <div className="p-4 max-w-6xl mx-auto">
-          <h1 className="text-3xl font-bold mb-6 text-center mt-40">
-            Hospital Search Results for {city}, {state}
+          <h1 className="text-3xl font-bold mb-6 text-center mt-40 text-gray-900">
+            Hospital Search Results for {city}, {state} State
           </h1>
           <p className="text-xl font-semibold mb-4 text-center text-gray-700">
             {hospitals.length} hospitals found in your location
@@ -118,19 +118,19 @@ export default async function SearchResultsPage({
                     <FaHospitalUser className="mr-2 text-blue-900" />
                     {hospital.name} {hospital.hospitalName}
                   </h2>
-                  <p className="text-sm text-gray-600 mb-1 flex items-center">
+                  <p className="text-sm text-gray-900 mb-1 flex items-center">
                     <FaMapMarkerAlt className="mr-2 text-blue-900" />{' '}
                     {hospital.address}
                   </p>
-                  <p className="text-sm text-gray-600 mb-1 flex items-center">
+                  <p className="text-sm text-gray-900 mb-1 flex items-center">
                     <FaPhoneAlt className="mr-2 text-blue-900" />{' '}
                     {hospital.phone}
                   </p>
-                  <p className="text-sm text-gray-600 mb-1 flex items-center">
+                  <p className="text-sm text-gray-900 mb-1 flex items-center">
                     <FaEnvelope className="mr-2 text-blue-900" />{' '}
                     {hospital.email}
                   </p>
-                  <p className="text-sm text-gray-600 flex items-center">
+                  <p className="text-sm text-gray-900 flex items-center">
                     <FaFileAlt
                       style={iconStyle}
                       className="mr-2 text-blue-900 text-2xl"
@@ -149,7 +149,7 @@ export default async function SearchResultsPage({
                         {hospital.website}
                       </Link>
                     ) : (
-                      <p>No website available</p>
+                      <p className="text-gray-900">No website available</p>
                     )}
                   </p>
                 </li>

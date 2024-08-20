@@ -8,7 +8,7 @@ const Home: React.FC = () => {
   return (
     <div>
       <Header />
-      <main className="container mx-auto p-4">
+      <main className=" p-4">
         <LandingPage />
       </main>
       <Footer />

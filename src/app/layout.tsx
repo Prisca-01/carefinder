@@ -44,7 +44,7 @@ const RootLayout: React.FC<LayoutProps> = ({ children }) => {
       <ActionQueueProvider>
         <html lang="en">
           <body
-            className="min-h-screen bg-gray-200
+            className="min-h-screen bg-blue-900
            "
           >
             <ErrorBoundary>{children}</ErrorBoundary>

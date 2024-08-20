@@ -33,7 +33,7 @@ export default function Header() {
           {isNavOpen ? <FaTimes /> : <FaBars />}
         </button>
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex md:space-x-8 md:justify-between">
+        <nav className="hidden md:flex md:space-x-8 md:justify-between ">
           <Link href="/" className="mr-4">
             Home
           </Link>
@@ -100,5 +100,6 @@ export default function Header() {
         </div>
       </div>
     </header>
+    // https://www.webmobilefirst.com/en/screencasts/zNrBQyEgHA/
   );
 }

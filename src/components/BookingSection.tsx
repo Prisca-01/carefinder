@@ -1,5 +1,6 @@
 'use client';
 
+import { set } from 'date-fns';
 import Image from 'next/image';
 import { useState } from 'react';
 
@@ -8,10 +9,22 @@ const BookingSection = () => {
     name: '',
     email: '',
     phone: '',
+    hospital: '',
     date: '',
     time: '',
     comments: '',
   });
+  const resetForm = () => {
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      hospital: '',
+      date: '',
+      time: '',
+      comments: '',
+    });
+  };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -22,12 +35,12 @@ const BookingSection = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle form submission logic
-    console.log('Form submitted:', formData);
+    alert('Form submitted');
+    resetForm();
   };
 
   return (
-    <div className="py-12">
+    <div className="py-10 bg-gray-100">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-stretch">
         {/* Image Section */}
         <div className="md:w-1/2 w-full relative">
@@ -42,7 +55,7 @@ const BookingSection = () => {
         </div>
 
         {/* Booking Form Section */}
-        <div className="md:w-1/2 w-full bg-white p-8 flex flex-col justify-center">
+        <div className="md:w-1/2 w-full bg-gray-100 p-8 flex flex-col justify-center">
           {/* <h2 className="text-2xl font-bold mb-4">Book a Hospital Appointment</h2> */}
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
@@ -58,7 +71,7 @@ const BookingSection = () => {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm focus:border-blue-900 focus:ring-blue-900 sm:text-sm"
+                className="mt-1 block w-full border h-10 p-2 text-gray-700 border-gray-300 rounded-lg shadow-sm focus:border-blue-900 focus:ring-blue-900 sm:text-sm"
                 required
               />
             </div>
@@ -76,7 +89,7 @@ const BookingSection = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm focus:border-blue-900 focus:ring-blue-900 sm:text-sm"
+                className="mt-1 block w-full border h-10 p-2 text-gray-700 border-gray-300 rounded-lg shadow-sm focus:border-blue-900 focus:ring-blue-900 sm:text-sm"
                 required
               />
             </div>
@@ -94,11 +107,27 @@ const BookingSection = () => {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm focus:border-blue-900 focus:ring-blue-900 sm:text-sm"
+                className="mt-1 block w-full border h-10 p-2 text-gray-700 border-gray-300 rounded-lg shadow-sm focus:border-blue-900 focus:ring-blue-900 sm:text-sm"
                 required
               />
             </div>
-
+            <div className="mb-4">
+              <label
+                htmlFor="hospital"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Hospital
+              </label>
+              <input
+                type="text"
+                id="hospital"
+                name="hospital"
+                value={formData.hospital}
+                onChange={handleChange}
+                className="mt-1 block w-full border h-10 p-2 text-gray-700 border-gray-300 rounded-lg shadow-sm focus:border-blue-900 focus:ring-blue-900 sm:text-sm"
+                required
+              />
+            </div>
             <div className="mb-4">
               <label
                 htmlFor="date"
@@ -112,7 +141,7 @@ const BookingSection = () => {
                 name="date"
                 value={formData.date}
                 onChange={handleChange}
-                className="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm focus:border-blue-900 focus:ring-blue-900 sm:text-sm"
+                className="mt-1 block w-full border h-10 p-2 text-gray-700 border-gray-300 rounded-lg shadow-sm focus:border-blue-900 focus:ring-blue-900 sm:text-sm"
                 required
               />
             </div>
@@ -130,7 +159,7 @@ const BookingSection = () => {
                 name="time"
                 value={formData.time}
                 onChange={handleChange}
-                className="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm focus:border-blue-900 focus:ring-blue-900 sm:text-sm"
+                className="mt-1 block w-full border h-10 p-2 text-gray-700 border-gray-300 rounded-lg shadow-sm focus:border-blue-900 focus:ring-blue-900 sm:text-sm"
                 required
               />
             </div>
@@ -148,7 +177,7 @@ const BookingSection = () => {
                 value={formData.comments}
                 onChange={handleChange}
                 rows={4}
-                className="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm focus:border-blue-900 focus:ring-blue-900 sm:text-sm"
+                className="mt-1 block w-full border p-2 text-gray-700 border-gray-300 rounded-lg shadow-sm focus:border-blue-900 focus:ring-blue-900 sm:text-sm"
               />
             </div>
 

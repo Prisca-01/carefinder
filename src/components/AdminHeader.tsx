@@ -63,13 +63,22 @@ const AdminHeader: React.FC = () => {
 
   return (
     <>
-      <header className="bg-gray-100 p-4 text-blue-900 fixed w-full z-50">
+      <header className="bg-gray-50 p-2 text-blue-900 fixed w-full z-50">
         <div className="container mx-auto flex justify-between items-center h-16">
-          <h1 className="text-3xl font-bold text-blue-900 ml-6">
-            <Link href="/dashboard" className="mr-4">
-              Carefinder
-            </Link>
-          </h1>
+          <div className="flex flex-row">
+            <Image
+              src="/images/logo.png"
+              alt="Logo Image"
+              width={28}
+              height={10}
+              priority
+            />
+            <h1 className="text-3xl font-bold text-blue-900 ml-1">
+              <Link href="/dashboard" className="mr-4">
+                Carefinder
+              </Link>
+            </h1>
+          </div>
           <nav className="hidden md:flex space-x-8 mr-12 ">
             <Link href="/dashboard" className="text-blue-900 text-l">
               Home

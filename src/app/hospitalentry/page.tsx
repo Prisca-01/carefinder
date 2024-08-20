@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+// import { useAuth } from '@/hooks/UseAuth';
 import AdminHeader from '../../components/AdminHeader';
 import Footer from '../../components/Footer';
 import Image from 'next/image';
@@ -53,6 +54,7 @@ const nigeriaStates = [
 const db = getFirestore(app);
 
 export default function AddEntry() {
+  // const { user } = useAuth();
   const [hospitalName, setHospitalName] = useState('');
   const [address, setAddress] = useState('');
   const [city, setCity] = useState('');
@@ -92,6 +94,7 @@ export default function AddEntry() {
       category,
       description,
       termsAccepted,
+      // uid: user?.uid,
     };
 
     // Validate form data manually
@@ -120,32 +123,6 @@ export default function AddEntry() {
     }
   };
 
-  //   if (!termsAccepted) {
-  //     alert('You must accept the terms and conditions to submit the form.');
-  //     return;
-  //   }
-
-  //   try {
-  //     await addDoc(collection(db, 'hospitals'), {
-  //       hospitalName,
-  //       address,
-  //       city,
-  //       state,
-  //       phoneNumber,
-  //       email,
-  //       website,
-  //       category,
-  //       description,
-  //       createdAt: new Date(), // Add a timestamp
-  //       photoURL: photoPreview || '', // You might need to handle file uploads separately
-  //     });
-  //     alert('Hospital entry added successfully!');
-  //   } catch (error) {
-  //     console.error('Error adding document: ', error);
-  //     alert('There was an error adding the hospital entry.');
-  //   }
-  // };
-
   return (
     <>
       <AdminHeader />
@@ -158,19 +135,19 @@ export default function AddEntry() {
             className="object-cover object-center"
             priority
           />
-          <h1 className="absolute inset-0 flex items-center justify-center text-center text-5xl font-bold text-blue-900">
+          <h1 className="absolute inset-0 flex items-center justify-center text-center text-4xl font-bold text-blue-900">
             Add Hospital Entry
           </h1>
         </div>
 
-        <div className="max-w-6xl mx-auto p-6 bg-white shadow-md rounded-md mt-32">
+        <div className="max-w-6xl mx-auto p-6 bg-white rounded-md mt-32">
           {successMessage && (
-            <div className="bg-green-500 text-white p-4 rounded-md mb-4">
+            <div className="bg-green-600 text-gray-100 p-4 rounded-md mb-4">
               {successMessage}
             </div>
           )}
           {errorMessage && (
-            <div className="bg-red-500 text-white p-4 rounded-md mb-4">
+            <div className="bg-red-600 text-gray-100 p-4 rounded-md mb-4">
               {errorMessage}
             </div>
           )}
@@ -188,7 +165,7 @@ export default function AddEntry() {
                 name="hospitalName"
                 value={hospitalName}
                 onChange={(e) => setHospitalName(e.target.value)}
-                className="mt-1 p-2 block w-full border-gray-300 h-12 border rounded-md focus:outline-none sm:text-lg"
+                className="mt-1 p-2 block w-full bg-gray-50 text-gray-900 border-gray-300 h-12 border rounded-md focus:outline-none sm:text-lg"
                 placeholder="Add Entry"
                 required
               />
@@ -207,7 +184,7 @@ export default function AddEntry() {
                 name="address"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
-                className="mt-1 p-2 block w-full border-gray-300 h-12 border rounded-md focus:outline-none sm:text-lg"
+                className="mt-1 p-2 block w-full bg-gray-50 text-gray-900 border-gray-300 h-12 border rounded-md focus:outline-none sm:text-lg"
                 placeholder='e.g. "123 Main Street"'
                 required
               />
@@ -226,7 +203,7 @@ export default function AddEntry() {
                 name="city"
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
-                className="mt-1 p-2 block w-full border-gray-300 h-12 border rounded-md focus:outline-none sm:text-lg"
+                className="mt-1 p-2 block w-full bg-gray-50 text-gray-900 border-gray-300 h-12 border rounded-md focus:outline-none sm:text-lg"
                 placeholder='e.g. "Enugu"'
                 required
               />
@@ -244,14 +221,14 @@ export default function AddEntry() {
                 name="state"
                 value={state}
                 onChange={(e) => setState(e.target.value)}
-                className="mt-1 p-2 text-gray-400 block w-full border-gray-300 h-12 border rounded-md focus:outline-none sm:text-lg"
+                className="mt-1 p-2 block w-full bg-gray-50 text-gray-900 border-gray-300 h-12 border rounded-md focus:outline-none sm:text-lg"
                 required
               >
-                <option value="" disabled>
+                <option value="" disabled className="text-gray-900">
                   Select a state
                 </option>
                 {nigeriaStates.map((state, index) => (
-                  <option key={index} value={state}>
+                  <option key={index} value={state} className="text-gray-900">
                     {state}
                   </option>
                 ))}
@@ -271,7 +248,7 @@ export default function AddEntry() {
                 name="tel"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
-                className="mt-1 p-2 block w-full border-gray-300 h-12 border rounded-md focus:outline-none sm:text-lg"
+                className="mt-1 p-2 block w-full bg-gray-50 text-gray-900 border-gray-300 h-12 border rounded-md focus:outline-none sm:text-lg"
                 placeholder="070 0000 0000"
                 required
               />
@@ -290,7 +267,7 @@ export default function AddEntry() {
                 name="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="mt-1 p-2 block w-full border-gray-300 h-12 border rounded-md focus:outline-none sm:text-lg"
+                className="mt-1 p-2 block w-full bg-gray-50 text-gray-900 border-gray-300 h-12 border rounded-md focus:outline-none sm:text-lg"
                 placeholder="Enter an email address"
               />
             </div>
@@ -308,7 +285,7 @@ export default function AddEntry() {
                 name="url"
                 value={website}
                 onChange={(e) => setWebsite(e.target.value)}
-                className="mt-1 p-2 block w-full border-gray-300 h-12 border rounded-md focus:outline-none sm:text-lg"
+                className="mt-1 p-2 block w-full bg-gray-50 text-gray-900 border-gray-300 h-12 border rounded-md focus:outline-none sm:text-lg"
                 placeholder='e.g. "https://example.com"'
               />
             </div>
@@ -325,17 +302,27 @@ export default function AddEntry() {
                 name="category"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-                className="mt-1 p-2 text-gray-400 block w-full border-gray-300 h-12 border rounded-md focus:outline-none sm:text-lg"
+                className="mt-1 p-2 block w-full bg-gray-50 text-gray-900 border-gray-300 h-12 border rounded-md focus:outline-none sm:text-lg"
                 required
               >
-                <option value="" disabled>
+                <option value="" disabled className="text-gray-900">
                   Select a category
                 </option>
-                <option value="General">General</option>
-                <option value="Pediatrics">Pediatrics</option>
-                <option value="Cardiology">Cardiology</option>
-                <option value="Dermatology">Dermatology</option>
-                <option value="Eye care">Eye Care</option>
+                <option value="General" className="text-gray-900">
+                  General
+                </option>
+                <option value="Pediatrics" className="text-gray-900">
+                  Pediatrics
+                </option>
+                <option value="Cardiology" className="text-gray-900">
+                  Cardiology
+                </option>
+                <option value="Dermatology" className="text-gray-900">
+                  Dermatology
+                </option>
+                <option value="Eye care" className="text-gray-900">
+                  Eye Care
+                </option>
               </select>
             </div>
 
@@ -351,6 +338,7 @@ export default function AddEntry() {
                   id="description"
                   value={description}
                   onChange={(value) => setDescription(value || '')}
+                  className="text-gray-900"
                 />
               </div>
             </div>
@@ -369,10 +357,10 @@ export default function AddEntry() {
                   type="checkbox"
                   checked={termsAccepted}
                   onChange={() => setTermsAccepted(!termsAccepted)}
-                  className="form-checkbox h-4 w-4 border-gray-300 rounded"
+                  className="form-checkbox h-4 w-4 text-gray-900 border-gray-300 rounded"
                   required
                 />
-                <span className="ml-2 text-sm text-gray-600">
+                <span className="ml-2 text-sm text-gray-900">
                   I agree to the{' '}
                   <Link href="/terms" className="text-blue-900 hover:underline">
                     terms and conditions

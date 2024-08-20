@@ -59,7 +59,7 @@ const BlogPage = async () => {
                     priority
                     className="w-full h-auto object-cover rounded-md"
                   />
-                  <div className="absolute bottom-0 left-0 w-full bg-gray-400 bg-opacity-50 text-blue-900 p-4">
+                  <div className="absolute bottom-0 left-0 w-full bg-gray-400 bg-opacity-70 text-blue-900 p-4">
                     <h2 className="text-2xl font-semibold text-blue-900">
                       {post.title}
                     </h2>
@@ -75,11 +75,11 @@ const BlogPage = async () => {
                       className="rounded-full"
                       style={{ height: 'auto', width: 'auto' }}
                     />
-                    <p className="ml-2 text-sm text-gray-700">
+                    <p className="ml-2 text-sm text-gray-900">
                       {post.author} • {post.date} • {post.comments} comments
                     </p>
                   </div>
-                  <p className="text-gray-700 mt-2">{post.excerpt}</p>
+                  <p className="text-gray-900 mt-2">{post.excerpt}</p>
                   <div className="mt-4">
                     <Link href={`/blog/${post.id}`}>
                       <button className="bg-blue-900 text-white px-4 py-2 rounded hover:bg-blue-700">
@@ -93,7 +93,7 @@ const BlogPage = async () => {
           </div>
         </div>
 
-        {/* Right-side content, e.g., categories or tags */}
+        {/* Right-side content, e.g., categories or tags
         <div className="hidden md:block md:w-1/3 p-4">
           <h2 className="text-xl font-bold mb-4">Categories</h2>
           <ul>
@@ -107,7 +107,7 @@ const BlogPage = async () => {
               Wellness
             </li>
           </ul>
-        </div>
+        </div> */}
       </div>
 
       <Footer />

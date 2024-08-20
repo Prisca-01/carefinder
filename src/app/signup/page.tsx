@@ -103,7 +103,7 @@ const SignUp: React.FC = () => {
           onSubmit={handleSubmit(onSubmit)}
           className="bg-white p-8 m-24  rounded shadow-md w-full max-w-lg"
         >
-          <h1 className="text-2xl font-bold mb-6 text-center">
+          <h1 className="text-2xl text-gray-900 font-bold mb-6 text-center">
             Signup as Admin
           </h1>
 
@@ -111,16 +111,16 @@ const SignUp: React.FC = () => {
           <div className="flex justify-around mb-6">
             <button
               type="button"
-              className="flex items-center justify-center p-2 border border-gray-300 rounded-md hover:bg-gray-200"
+              className="flex items-center justify-center p-2 bg-blue-900 border border-gray-300 rounded-md hover:bg-blue-700"
             >
-              <FaApple className="text-2xl" />
+              <FaApple className="text-2xl text-gray-100" />
             </button>
             <button
               type="button"
               onClick={handleGoogleSignUp}
-              className="flex items-center justify-center p-2 border border-gray-300 rounded-md hover:bg-gray-200"
+              className="flex items-center justify-center p-2 bg-blue-900 border border-gray-300 rounded-md hover:bg-blue-700"
             >
-              <FaGoogle className="text-2xl" />
+              <FaGoogle className="text-2xl text-gray-100" />
             </button>
           </div>
 
@@ -142,7 +142,7 @@ const SignUp: React.FC = () => {
                 {...register('firstName', {
                   required: 'First name is required',
                 })}
-                className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+                className="mt-1 block w-full p-2 border bg-white text-gray-900 border-gray-300 rounded-md"
               />
               {errors.firstName && (
                 <p className="text-red-500">{errors.firstName.message}</p>
@@ -155,7 +155,7 @@ const SignUp: React.FC = () => {
               <input
                 type="text"
                 {...register('lastName', { required: 'Last name is required' })}
-                className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+                className="mt-1 block w-full p-2 border bg-white text-gray-900 border-gray-300 rounded-md"
               />
               {errors.lastName && (
                 <p className="text-red-500">{errors.lastName.message}</p>
@@ -171,7 +171,7 @@ const SignUp: React.FC = () => {
               id="username"
               type="text"
               {...register('username', { required: 'Username is required' })}
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+              className="mt-1 block w-full p-2 border bg-white text-gray-900 border-gray-300 rounded-md"
             />
             {errors.username && (
               <p className="text-red-500">{errors.username.message}</p>
@@ -185,7 +185,7 @@ const SignUp: React.FC = () => {
               id="email"
               type="email"
               {...register('email', { required: 'Email is required' })}
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+              className="mt-1 block w-full p-2 border bg-white text-gray-900 border-gray-300 rounded-md"
             />
             {errors.email && (
               <p className="text-red-500">{errors.email.message}</p>
@@ -199,7 +199,7 @@ const SignUp: React.FC = () => {
               id="password"
               type="password"
               {...register('password', { required: 'Password is required' })}
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+              className="mt-1 block w-full p-2 border bg-white text-gray-900 border-gray-300 rounded-md"
             />
             {errors.password && (
               <p className="text-red-500">{errors.password.message}</p>
@@ -217,7 +217,7 @@ const SignUp: React.FC = () => {
           </button>
 
           <div className="mt-4 text-center">
-            <p>
+            <p className="text-gray-900">
               Already have an account?{' '}
               <a href="/login" className="text-blue-900 hover:underline">
                 Sign In

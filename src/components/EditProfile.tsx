@@ -57,7 +57,9 @@ const EditProfile: React.FC<EditProfileProps> = ({
   return (
     <div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50">
       <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
-        <h2 className="text-lg font-bold mb-4">Edit Profile</h2>
+        <h2 className="text-lg font-bold mb-4 text-blue-900 text-center">
+          Edit Profile
+        </h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
             <label htmlFor="photoURL" className="block text-gray-700">
@@ -78,10 +80,10 @@ const EditProfile: React.FC<EditProfileProps> = ({
               id="firstName"
               type="text"
               {...register('firstName', { required: 'First name is required' })}
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+              className="mt-1 block w-full text-gray-900 p-2 border border-gray-300 rounded-md"
             />
             {errors.firstName && (
-              <p className="text-red-500">{errors.firstName.message}</p>
+              <p className="text-red-600">{errors.firstName.message}</p>
             )}
           </div>
           <div className="mb-4">
@@ -92,10 +94,10 @@ const EditProfile: React.FC<EditProfileProps> = ({
               id="lastName"
               type="text"
               {...register('lastName', { required: 'Last name is required' })}
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+              className="mt-1 block w-full text-gray-900 p-2 border border-gray-300 rounded-md"
             />
             {errors.lastName && (
-              <p className="text-red-500">{errors.lastName.message}</p>
+              <p className="text-red-600">{errors.lastName.message}</p>
             )}
           </div>
           <div className="flex justify-end mt-4">
@@ -108,7 +110,7 @@ const EditProfile: React.FC<EditProfileProps> = ({
             </button>
             <button
               type="submit"
-              className="bg-blue-500 text-white px-4 py-2 rounded"
+              className="bg-blue-900 text-white px-4 py-2 rounded hover:bg-blue-700"
             >
               Save
             </button>

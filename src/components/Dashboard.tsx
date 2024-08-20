@@ -45,7 +45,7 @@ const DashboardComponent: React.FC = () => {
   };
 
   return (
-    <div className="bg-gray-100">
+    <div className="bg-gray-50">
       <AdminHeader />
 
       {/* Browse Categories */}
@@ -117,12 +117,12 @@ const DashboardComponent: React.FC = () => {
               className="object-cover rounded-md mb-4"
               priority
             />
-            <h3 className="text-xl font-bold">
+            <h3 className="text-xl font-bold text-blue-900 text-center">
               Lagos State University Teaching Hospital
             </h3>
-            <p className="text-gray-700">Location: Ikeja, Lagos</p>
-            <p className="text-gray-500">Category: General</p>
-            <button className="mt-2 p-2 bg-blue-900 text-white rounded hover:bg-blue-700">
+            <p className="text-gray-700 text-center">Location: Ikeja, Lagos</p>
+            <p className="text-gray-700 text-center">Category: General</p>
+            <button className="mt-2 p-2 bg-blue-900 text-white rounded hover:bg-blue-700 text-center">
               View Details
             </button>
           </div>
@@ -137,12 +137,14 @@ const DashboardComponent: React.FC = () => {
               className="object-cover rounded-md mb-4"
               priority
             />
-            <h3 className="text-xl font-bold">National Hospital Abuja</h3>
-            <p className="text-gray-700">
+            <h3 className="text-xl font-bold text-blue-900 text-center">
+              National Hospital Abuja
+            </h3>
+            <p className="text-gray-700 text-center">
               Location: Central Business District, Abuja
             </p>
-            <p className="text-gray-500">Category: General</p>
-            <button className="mt-2 p-2 bg-blue-900 text-white rounded hover:bg-blue-700">
+            <p className="text-gray-700 text-center">Category: General</p>
+            <button className="mt-2 p-2 bg-blue-900 text-white rounded hover:bg-blue-700 text-center">
               View Details
             </button>
           </div>
@@ -157,10 +159,16 @@ const DashboardComponent: React.FC = () => {
               className="object-cover rounded-md mb-4"
               priority
             />
-            <h3 className="text-xl font-bold">University College Hospital</h3>
-            <p className="text-gray-700">Location: Ibadan, Oyo State</p>
-            <p className="text-gray-500">Category: Teaching Hospital</p>
-            <button className="mt-2 p-2 bg-blue-900 text-white rounded hover:bg-blue-700">
+            <h3 className="text-xl font-bold text-blue-900 text-center">
+              University College Hospital
+            </h3>
+            <p className="text-gray-700 text-center">
+              Location: Ibadan, Oyo State
+            </p>
+            <p className="text-gray-700 text-center">
+              Category: Teaching Hospital
+            </p>
+            <button className="mt-2 p-2 bg-blue-900 text-white rounded hover:bg-blue-700 text-center">
               View Details
             </button>
           </div>
@@ -189,7 +197,7 @@ const DashboardComponent: React.FC = () => {
                 height={800}
                 className="w-full h-40 object-cover rounded-md mb-4"
               />
-              <h3 className="text-xl font-bold">{post.title}</h3>
+              <h3 className="text-xl font-bold text-gray-900">{post.title}</h3>
               <p className="text-gray-800">{post.date}</p>
               <p className="text-gray-700">{post.excerpt}</p>
             </div>
@@ -198,7 +206,7 @@ const DashboardComponent: React.FC = () => {
         <div className="flex justify-center mt-8">
           <Link
             href="/blog"
-            className="bg-blue-900 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition duration-200 shadow-lg"
+            className="bg-blue-900 text-gray-100 px-6 py-3 rounded-md hover:bg-blue-700 transition duration-200 shadow-lg"
           >
             View Blog
           </Link>

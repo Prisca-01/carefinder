@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-
+import { FaChevronDown } from 'react-icons/fa';
 const states = [
   'Abia',
   'Adamawa',
@@ -188,42 +188,56 @@ const HospitalSearch: React.FC = () => {
   };
 
   return (
-    <div className=" py-8">
-      <div className="container mx-auto px-4">
+    <div className="py-8 bg-gray-100">
+      <div className="">
         <form
           onSubmit={handleSearch}
           className="flex flex-col items-center justify-center md:flex-row gap-4 mb-6 text-black p-6 rounded-lg mx-auto"
         >
-          <select
-            value={state}
-            onChange={handleStateChange}
-            className="p-2 text-gray-600 border border-gray-300 rounded-full outline-none focus:outline-blue-900 w-72 h-14"
-          >
-            <option value="Select state" defaultChecked>
-              Select a state...
-            </option>
-            {states.map((state) => (
-              <option key={state} value={state}>
-                {state}
+          <div className="relative inline-block w-72">
+            <select
+              value={state}
+              onChange={handleStateChange}
+              className="p-3 text-gray-800 border border-gray-300 rounded-full outline-none focus:outline-blue-900 w-full h-14 appearance-none bg-white pr-10"
+            >
+              <option
+                value="Select state"
+                className="text-gray-800"
+                defaultChecked
+              >
+                Select a state...
               </option>
-            ))}
-          </select>
+              {states.map((state) => (
+                <option key={state} value={state} className="text-gray-800">
+                  {state}
+                </option>
+              ))}
+            </select>
+            <FaChevronDown className="absolute top-1/2 right-4 transform -translate-y-1/2 pointer-events-none text-gray-800" />
+          </div>
 
-          <select
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-            className="p-2 text-gra900 border border-gray-300 rounded-full outline-none focus:outline-blue-900 w-72 h-14"
-            disabled={!state}
-          >
-            <option value="Select city" defaultChecked>
-              Select a city...
-            </option>
-            {selectedCities.map((city) => (
-              <option key={city} value={city}>
-                {city}
+          <div className="relative inline-block w-72">
+            <select
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+              className="p-3 text-gray-800 border border-gray-300 rounded-full outline-none focus:outline-blue-900 w-full h-14 appearance-none bg-white pr-10"
+              disabled={!state}
+            >
+              <option
+                value="Select city"
+                className="text-gray-800"
+                defaultChecked
+              >
+                Select a city...
               </option>
-            ))}
-          </select>
+              {selectedCities.map((city) => (
+                <option key={city} value={city} className="text-gray-800">
+                  {city}
+                </option>
+              ))}
+            </select>
+            <FaChevronDown className="absolute top-1/2 right-4 transform -translate-y-1/2 pointer-events-none text-gray-800" />
+          </div>
 
           <button
             type="submit"

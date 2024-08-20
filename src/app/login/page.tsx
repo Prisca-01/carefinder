@@ -50,7 +50,7 @@ export default function Login() {
           onSubmit={handleSubmit}
           className="bg-white p-8 rounded shadow-md w-full max-w-lg"
         >
-          <h1 className="text-2xl font-bold mb-6 text-center">
+          <h1 className="text-2xl font-bold mb-6 text-center text-gray-900">
             Login to Carefinder
           </h1>
 
@@ -61,16 +61,16 @@ export default function Login() {
             <button
               type="button"
               // onClick={() => handleSocialLogin('apple')}
-              className="flex items-center justify-center p-2 border border-gray-300 rounded-md hover:bg-gray-200"
+              className="flex items-center justify-center p-2 border bg-blue-900 border-gray-300 rounded-md hover:bg-blue-700"
             >
-              <FaApple className="text-2xl" />
+              <FaApple className="text-2xl text-gray-100" />
             </button>
             <button
               type="button"
               onClick={() => handleSocialLogin('google')}
-              className="flex items-center justify-center p-2 border border-gray-300 rounded-md hover:bg-gray-200"
+              className="flex items-center justify-center p-2 border bg-blue-900 border-gray-300 rounded-md hover:bg-blue-700"
             >
-              <FaGoogle className="text-2xl" />
+              <FaGoogle className="text-2xl text-gray-100" />
             </button>
           </div>
 
@@ -91,7 +91,7 @@ export default function Login() {
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+              className="mt-1 block w-full p-2 border border-gray-300 rounded-md text-gray-900"
             />
           </div>
 
@@ -106,7 +106,7 @@ export default function Login() {
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+              className="mt-1 block w-full p-2 border border-gray-300 rounded-md text-gray-900"
             />
           </div>
 
@@ -118,7 +118,7 @@ export default function Login() {
           </button>
 
           <div className="mt-4 text-center">
-            <p>
+            <p className="text-gray-900">
               Don&apos;t have an account?{' '}
               <a href="/signup" className="text-blue-900 hover:underline">
                 Sign Up
