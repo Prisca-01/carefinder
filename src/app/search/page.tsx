@@ -149,7 +149,7 @@ export default async function SearchResultsPage({
                         {hospital.website}
                       </Link>
                     ) : (
-                      <p className="text-gray-900">No website available</p>
+                      <h3 className="text-gray-900">No website available</h3>
                     )}
                   </p>
                 </li>

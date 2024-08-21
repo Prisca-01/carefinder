@@ -4,17 +4,21 @@ import { useRouter } from 'next/navigation';
 import { useAuth } from '../../hooks/UseAuth';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import { FaApple, FaGithub, FaGoogle } from 'react-icons/fa';
+import { FaApple, FaGoogle } from 'react-icons/fa';
 
 export default function Login() {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-  const { login, loginWithGoogle, loginWithGithub, loginWithApple } = useAuth();
+  const { login, loginWithGoogle, loginWithApple } = useAuth();
   const router = useRouter();
   const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true);
+    setError(null);
+
     try {
       await login(email, password);
       console.log('Login successful');
@@ -22,15 +26,18 @@ export default function Login() {
     } catch (error: any) {
       console.error('Login failed:', error);
       setError('Login failed. Please check your credentials.');
+    } finally {
+      setLoading(false);
     }
   };
 
-  const handleSocialLogin = async (provider: 'google' | 'github' | 'apple') => {
+  const handleSocialLogin = async (provider: 'google' | 'apple') => {
+    setLoading(true);
+    setError(null);
+
     try {
       if (provider === 'google') {
         await loginWithGoogle();
-      } else if (provider === 'github') {
-        await loginWithGithub();
       } else if (provider === 'apple') {
         await loginWithApple();
       }
@@ -39,6 +46,8 @@ export default function Login() {
     } catch (error: any) {
       console.error('Social login failed:', error);
       setError('Social login failed. Please try again.');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -60,15 +69,17 @@ export default function Login() {
           <div className="flex justify-around mb-6">
             <button
               type="button"
-              // onClick={() => handleSocialLogin('apple')}
-              className="flex items-center justify-center p-2 border bg-blue-900 border-gray-300 rounded-md hover:bg-blue-700"
+              onClick={() => handleSocialLogin('apple')}
+              className="flex items-center justify-center p-2 border bg-blue-900 border-gray-300 rounded-md hover:bg-blue-700 disabled:opacity-50"
+              disabled={loading}
             >
               <FaApple className="text-2xl text-gray-100" />
             </button>
             <button
               type="button"
               onClick={() => handleSocialLogin('google')}
-              className="flex items-center justify-center p-2 border bg-blue-900 border-gray-300 rounded-md hover:bg-blue-700"
+              className="flex items-center justify-center p-2 border bg-blue-900 border-gray-300 rounded-md hover:bg-blue-700 disabled:opacity-50"
+              disabled={loading}
             >
               <FaGoogle className="text-2xl text-gray-100" />
             </button>
@@ -92,6 +103,7 @@ export default function Login() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="mt-1 block w-full p-2 border border-gray-300 rounded-md text-gray-900"
+              disabled={loading}
             />
           </div>
 
@@ -107,14 +119,16 @@ export default function Login() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="mt-1 block w-full p-2 border border-gray-300 rounded-md text-gray-900"
+              disabled={loading}
             />
           </div>
 
           <button
             type="submit"
-            className="w-full p-2 bg-blue-900 text-white rounded hover:bg-blue-700"
+            className="w-full p-2 bg-blue-900 text-white rounded hover:bg-blue-700 disabled:opacity-50"
+            disabled={loading}
           >
-            Login
+            {loading ? 'Logging in...' : 'Login'}
           </button>
 
           <div className="mt-4 text-center">

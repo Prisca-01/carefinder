@@ -122,9 +122,6 @@ const DashboardComponent: React.FC = () => {
             </h3>
             <p className="text-gray-700 text-center">Location: Ikeja, Lagos</p>
             <p className="text-gray-700 text-center">Category: General</p>
-            <button className="mt-2 p-2 bg-blue-900 text-white rounded hover:bg-blue-700 text-center">
-              View Details
-            </button>
           </div>
 
           {/* Hospital 2 */}
@@ -144,9 +141,6 @@ const DashboardComponent: React.FC = () => {
               Location: Central Business District, Abuja
             </p>
             <p className="text-gray-700 text-center">Category: General</p>
-            <button className="mt-2 p-2 bg-blue-900 text-white rounded hover:bg-blue-700 text-center">
-              View Details
-            </button>
           </div>
 
           {/* Hospital 3 */}
@@ -168,9 +162,6 @@ const DashboardComponent: React.FC = () => {
             <p className="text-gray-700 text-center">
               Category: Teaching Hospital
             </p>
-            <button className="mt-2 p-2 bg-blue-900 text-white rounded hover:bg-blue-700 text-center">
-              View Details
-            </button>
           </div>
         </div>
       </section>

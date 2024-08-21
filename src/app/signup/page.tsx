@@ -31,9 +31,11 @@ const SignUp: React.FC = () => {
   } = useForm<SignUpFormData>();
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<boolean>(false);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const router = useRouter();
 
   const onSubmit = async (data: SignUpFormData) => {
+    setIsSubmitting(true);
     try {
       console.log('Creating user...');
       const userCredential = await createUserWithEmailAndPassword(
@@ -64,10 +66,13 @@ const SignUp: React.FC = () => {
     } catch (error: any) {
       console.error('Error during sign-up:', error);
       setError(error.message);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   const handleGoogleSignUp = async () => {
+    setIsSubmitting(true);
     try {
       const provider = new GoogleAuthProvider();
       const result = await signInWithPopup(auth, provider);
@@ -92,6 +97,8 @@ const SignUp: React.FC = () => {
     } catch (error: any) {
       console.error('Error during Google sign-up:', error);
       setError(error.message);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -112,6 +119,7 @@ const SignUp: React.FC = () => {
             <button
               type="button"
               className="flex items-center justify-center p-2 bg-blue-900 border border-gray-300 rounded-md hover:bg-blue-700"
+              disabled={isSubmitting}
             >
               <FaApple className="text-2xl text-gray-100" />
             </button>
@@ -119,6 +127,7 @@ const SignUp: React.FC = () => {
               type="button"
               onClick={handleGoogleSignUp}
               className="flex items-center justify-center p-2 bg-blue-900 border border-gray-300 rounded-md hover:bg-blue-700"
+              disabled={isSubmitting}
             >
               <FaGoogle className="text-2xl text-gray-100" />
             </button>
@@ -142,6 +151,7 @@ const SignUp: React.FC = () => {
                 {...register('firstName', {
                   required: 'First name is required',
                 })}
+                disabled={isSubmitting}
                 className="mt-1 block w-full p-2 border bg-white text-gray-900 border-gray-300 rounded-md"
               />
               {errors.firstName && (
@@ -155,6 +165,7 @@ const SignUp: React.FC = () => {
               <input
                 type="text"
                 {...register('lastName', { required: 'Last name is required' })}
+                disabled={isSubmitting}
                 className="mt-1 block w-full p-2 border bg-white text-gray-900 border-gray-300 rounded-md"
               />
               {errors.lastName && (
@@ -171,6 +182,7 @@ const SignUp: React.FC = () => {
               id="username"
               type="text"
               {...register('username', { required: 'Username is required' })}
+              disabled={isSubmitting}
               className="mt-1 block w-full p-2 border bg-white text-gray-900 border-gray-300 rounded-md"
             />
             {errors.username && (
@@ -185,6 +197,7 @@ const SignUp: React.FC = () => {
               id="email"
               type="email"
               {...register('email', { required: 'Email is required' })}
+              disabled={isSubmitting}
               className="mt-1 block w-full p-2 border bg-white text-gray-900 border-gray-300 rounded-md"
             />
             {errors.email && (
@@ -199,6 +212,7 @@ const SignUp: React.FC = () => {
               id="password"
               type="password"
               {...register('password', { required: 'Password is required' })}
+              disabled={isSubmitting}
               className="mt-1 block w-full p-2 border bg-white text-gray-900 border-gray-300 rounded-md"
             />
             {errors.password && (
@@ -211,9 +225,10 @@ const SignUp: React.FC = () => {
           )}
           <button
             type="submit"
-            className="w-full p-2 bg-blue-900 text-white rounded hover:bg-blue-700"
+            className="w-full p-2 bg-blue-900 text-white rounded hover:bg-blue-700 disabled:opacity-50"
+            disabled={isSubmitting}
           >
-            Sign Up
+            {isSubmitting ? 'Signing up...' : 'Sign Up'}
           </button>
 
           <div className="mt-4 text-center">

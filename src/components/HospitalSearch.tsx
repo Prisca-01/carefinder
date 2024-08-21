@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { FaChevronDown } from 'react-icons/fa';
+import { set } from 'date-fns';
 const states = [
   'Abia',
   'Adamawa',
@@ -169,6 +170,7 @@ const HospitalSearch: React.FC = () => {
   const [state, setState] = useState<string>('');
   const [city, setCity] = useState<string>('');
   const [selectedCities, setSelectedCities] = useState<string[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const router = useRouter();
 
   const handleStateChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -179,6 +181,7 @@ const HospitalSearch: React.FC = () => {
   };
 
   const handleSearch = (e: React.FormEvent) => {
+    setIsLoading(true);
     e.preventDefault();
     if (state && city) {
       router.push(
@@ -199,6 +202,7 @@ const HospitalSearch: React.FC = () => {
               value={state}
               onChange={handleStateChange}
               className="p-3 text-gray-800 border border-gray-300 rounded-full outline-none focus:outline-blue-900 w-full h-14 appearance-none bg-white pr-10"
+              disabled={isLoading}
             >
               <option
                 value="Select state"
@@ -241,9 +245,9 @@ const HospitalSearch: React.FC = () => {
 
           <button
             type="submit"
-            className="text-white px-6 py-3 rounded-full text-lg font-semibold bg-blue-900 hover:bg-blue-700 transition duration-300"
+            className="text-white px-6 py-3 rounded-full text-lg font-semibold bg-blue-900 hover:bg-blue-700 transition duration-300 disabled:opacity-50"
           >
-            Search
+            {isLoading ? 'Searching...' : 'Search'}
           </button>
         </form>
       </div>

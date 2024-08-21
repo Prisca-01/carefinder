@@ -16,7 +16,7 @@ const LandingPage: React.FC = () => {
     <>
       <div className="min-h-screen bg-gray-100">
         <section className=" w-full bg-blue-900 flex flex-col md:flex-row justify-between h-[580px] md:h-[600px] items-center py-12 mt-11 px-4 md:px-8 lg:px-16">
-          <div className="md:w-1/2 mb-40 md:mb-0 mt-10 text-center md:ml-10   md:text-left">
+          <div className="md:w-1/2 mb-40 md:mb-10 mt-10 text-center md:ml-10   md:text-left">
             <h1 className="text-4xl md:text-6xl font-bold mb-4 text-gray-100 leading-tight">
               Access Quality Healthcare with Carefinder
             </h1>
@@ -144,9 +144,6 @@ const LandingPage: React.FC = () => {
                   Location: Ikeja, Lagos
                 </p>
                 <p className="text-gray-700 text-center">Category: General</p>
-                <button className="mt-2 p-2 bg-blue-900 text-white rounded hover:bg-blue-700 text-center">
-                  View Details
-                </button>
               </div>
 
               {/* Hospital 2 */}
@@ -166,9 +163,6 @@ const LandingPage: React.FC = () => {
                   Location: Central Business District, Abuja
                 </p>
                 <p className="text-gray-700 text-center">Category: General</p>
-                <button className="mt-2 p-2 bg-blue-900 text-white rounded hover:bg-blue-700 text-center">
-                  View Details
-                </button>
               </div>
 
               {/* Hospital 3 */}
@@ -190,9 +184,6 @@ const LandingPage: React.FC = () => {
                 <p className="text-gray-700 text-center">
                   Category: Teaching Hospital
                 </p>
-                <button className="mt-2 p-2 bg-blue-900 text-white rounded hover:bg-blue-700 text-center">
-                  View Details
-                </button>
               </div>
             </div>
           </section>
@@ -208,7 +199,7 @@ const LandingPage: React.FC = () => {
                 <div className="flex items-center mb-4">
                   <FaQuoteLeft className="text-blue-900 text-3xl mr-2" />
                   <h3 className="text-2xl font-semibold text-blue-900">
-                    John Doe
+                    John Okafor
                   </h3>
                 </div>
                 <p className="text-gray-700 text-lg italic">
@@ -222,7 +213,7 @@ const LandingPage: React.FC = () => {
                 <div className="flex items-center mb-4">
                   <FaQuoteLeft className="text-blue-900 text-3xl mr-2" />
                   <h3 className="text-2xl font-semibold text-blue-900">
-                    Jane Smith
+                    Rita Ekanem
                   </h3>
                 </div>
                 <p className="text-gray-700 text-lg italic">
@@ -237,7 +228,7 @@ const LandingPage: React.FC = () => {
                 <div className="flex items-center mb-4">
                   <FaQuoteLeft className="text-blue-900 text-3xl mr-2" />
                   <h3 className="text-2xl font-semibold text-blue-900">
-                    Emily Johnson
+                    Dami Afe
                   </h3>
                 </div>
                 <p className="text-gray-700 text-lg italic">

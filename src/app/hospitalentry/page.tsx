@@ -67,6 +67,7 @@ export default function AddEntry() {
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
   const resetForm = () => {
     setHospitalName('');
@@ -82,7 +83,7 @@ export default function AddEntry() {
   };
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+    setIsSubmitting(true);
     const formData = {
       hospitalName,
       address,
@@ -120,6 +121,8 @@ export default function AddEntry() {
     } catch (error) {
       console.error('Error adding document: ', error);
       setErrorMessage('There was an error adding the hospital entry.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -168,6 +171,7 @@ export default function AddEntry() {
                 className="mt-1 p-2 block w-full bg-gray-50 text-gray-900 border-gray-300 h-12 border rounded-md focus:outline-none sm:text-lg"
                 placeholder="Add Entry"
                 required
+                disabled={isSubmitting}
               />
             </div>
 
@@ -187,6 +191,7 @@ export default function AddEntry() {
                 className="mt-1 p-2 block w-full bg-gray-50 text-gray-900 border-gray-300 h-12 border rounded-md focus:outline-none sm:text-lg"
                 placeholder='e.g. "123 Main Street"'
                 required
+                disabled={isSubmitting}
               />
             </div>
 
@@ -206,6 +211,7 @@ export default function AddEntry() {
                 className="mt-1 p-2 block w-full bg-gray-50 text-gray-900 border-gray-300 h-12 border rounded-md focus:outline-none sm:text-lg"
                 placeholder='e.g. "Enugu"'
                 required
+                disabled={isSubmitting}
               />
             </div>
 
@@ -223,6 +229,7 @@ export default function AddEntry() {
                 onChange={(e) => setState(e.target.value)}
                 className="mt-1 p-2 block w-full bg-gray-50 text-gray-900 border-gray-300 h-12 border rounded-md focus:outline-none sm:text-lg"
                 required
+                disabled={isSubmitting}
               >
                 <option value="" disabled className="text-gray-900">
                   Select a state
@@ -251,6 +258,7 @@ export default function AddEntry() {
                 className="mt-1 p-2 block w-full bg-gray-50 text-gray-900 border-gray-300 h-12 border rounded-md focus:outline-none sm:text-lg"
                 placeholder="070 0000 0000"
                 required
+                disabled={isSubmitting}
               />
             </div>
 
@@ -269,6 +277,7 @@ export default function AddEntry() {
                 onChange={(e) => setEmail(e.target.value)}
                 className="mt-1 p-2 block w-full bg-gray-50 text-gray-900 border-gray-300 h-12 border rounded-md focus:outline-none sm:text-lg"
                 placeholder="Enter an email address"
+                disabled={isSubmitting}
               />
             </div>
 
@@ -287,6 +296,7 @@ export default function AddEntry() {
                 onChange={(e) => setWebsite(e.target.value)}
                 className="mt-1 p-2 block w-full bg-gray-50 text-gray-900 border-gray-300 h-12 border rounded-md focus:outline-none sm:text-lg"
                 placeholder='e.g. "https://example.com"'
+                disabled={isSubmitting}
               />
             </div>
 
@@ -304,6 +314,7 @@ export default function AddEntry() {
                 onChange={(e) => setCategory(e.target.value)}
                 className="mt-1 p-2 block w-full bg-gray-50 text-gray-900 border-gray-300 h-12 border rounded-md focus:outline-none sm:text-lg"
                 required
+                disabled={isSubmitting}
               >
                 <option value="" disabled className="text-gray-900">
                   Select a category
@@ -372,9 +383,10 @@ export default function AddEntry() {
             <div className="flex justify-center">
               <button
                 type="submit"
-                className="bg-blue-900 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700"
+                className="bg-blue-900 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 disabled:opacity-50"
+                disabled={isSubmitting}
               >
-                Submit Entry
+                {isSubmitting ? 'Adding Entry...' : 'Add Entry'}
               </button>
             </div>
           </form>

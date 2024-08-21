@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 const BookingSection = () => {
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -34,9 +35,11 @@ const BookingSection = () => {
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    setIsSubmitting(true);
     e.preventDefault();
     alert('Form submitted');
     resetForm();
+    setIsSubmitting(false);
   };
 
   return (
@@ -73,6 +76,7 @@ const BookingSection = () => {
                 onChange={handleChange}
                 className="mt-1 block w-full border h-10 p-2 text-gray-700 border-gray-300 rounded-lg shadow-sm focus:border-blue-900 focus:ring-blue-900 sm:text-sm"
                 required
+                disabled={isSubmitting}
               />
             </div>
 
@@ -91,6 +95,7 @@ const BookingSection = () => {
                 onChange={handleChange}
                 className="mt-1 block w-full border h-10 p-2 text-gray-700 border-gray-300 rounded-lg shadow-sm focus:border-blue-900 focus:ring-blue-900 sm:text-sm"
                 required
+                disabled={isSubmitting}
               />
             </div>
 
@@ -109,6 +114,7 @@ const BookingSection = () => {
                 onChange={handleChange}
                 className="mt-1 block w-full border h-10 p-2 text-gray-700 border-gray-300 rounded-lg shadow-sm focus:border-blue-900 focus:ring-blue-900 sm:text-sm"
                 required
+                disabled={isSubmitting}
               />
             </div>
             <div className="mb-4">
@@ -126,6 +132,7 @@ const BookingSection = () => {
                 onChange={handleChange}
                 className="mt-1 block w-full border h-10 p-2 text-gray-700 border-gray-300 rounded-lg shadow-sm focus:border-blue-900 focus:ring-blue-900 sm:text-sm"
                 required
+                disabled={isSubmitting}
               />
             </div>
             <div className="mb-4">
@@ -143,6 +150,7 @@ const BookingSection = () => {
                 onChange={handleChange}
                 className="mt-1 block w-full border h-10 p-2 text-gray-700 border-gray-300 rounded-lg shadow-sm focus:border-blue-900 focus:ring-blue-900 sm:text-sm"
                 required
+                disabled={isSubmitting}
               />
             </div>
 
@@ -161,6 +169,7 @@ const BookingSection = () => {
                 onChange={handleChange}
                 className="mt-1 block w-full border h-10 p-2 text-gray-700 border-gray-300 rounded-lg shadow-sm focus:border-blue-900 focus:ring-blue-900 sm:text-sm"
                 required
+                disabled={isSubmitting}
               />
             </div>
 
@@ -183,9 +192,9 @@ const BookingSection = () => {
 
             <button
               type="submit"
-              className="w-full  bg-blue-900 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300"
+              className="w-full  bg-blue-900 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300 disabled:opacity-50"
             >
-              Submit
+              {isSubmitting ? 'Submitting...' : 'Submit'}
             </button>
           </form>
         </div>
