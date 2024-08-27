@@ -5,6 +5,10 @@ on:
     branches:
       - '*'
 
+  pull_request:
+    branches:
+      - '*'
+
 defaults:
   run:
     working-directory: ./
@@ -19,23 +23,24 @@ jobs:
     steps:
       - name: Checkout the Repository
         uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
 
-      - name: Setup Node.js
+        with:
+          version: 9.9.0
+          run_install: |
+            # - recursive: true
+            args: [--frozen-lockfile, --strict-peer-dependencies]
+      - name: Setup Nodejs
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+          registry-url: 'https://registry.npmjs.org'
           cache: 'pnpm'
 
-      - name: Install PNPM
-        uses: pnpm/action-setup@v2
-        with:
-          version: 9.7.0
-
-      - name: Install Dependencies
-        run: pnpm install
-
-      - name: Build Project
-        run: pnpm build
+      - name: Install dependencies
+        run: |
+          pnpm install
+          pnpm build
 
       - name: Install Vitest Browsers
         run: |
@@ -45,8 +50,7 @@ jobs:
           pnpm exec playwright install
 
       - name: Run Tests
-        run: npx vitest run --coverage
-
+        run: pnpm test:coverage && pnpm test:e2e
       - name: Upload Coverage Reports to Codecov
         uses: codecov/codecov-action@v4
         with:
