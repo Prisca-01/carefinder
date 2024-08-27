@@ -53,7 +53,12 @@ jobs:
           pnpm vitest install webkit --with-deps
           pnpm exec playwright install
 
+      - name: Set up Firebase environment
+        run: echo "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}" > serviceAccountKey.json
+
       - name: Run Tests
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
         run: pnpm test:coverage && pnpm test:e2e
       - name: Upload Coverage Reports to Codecov
         uses: codecov/codecov-action@v4
