@@ -1,0 +1,53 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - '*'
+
+defaults:
+  run:
+    working-directory: ./
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20]
+
+    steps:
+      - name: Checkout the Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+
+      - name: Install PNPM
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9.7.0
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Build Project
+        run: pnpm build
+
+      - name: Install Vitest Browsers
+        run: |
+          pnpm vitest install chromium --with-deps
+          pnpm vitest install firefox --with-deps
+          pnpm vitest install webkit --with-deps
+          pnpm exec playwright install
+
+      - name: Run Tests
+        run: npx vitest run --coverage
+
+      - name: Upload Coverage Reports to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
